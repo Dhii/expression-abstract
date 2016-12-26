@@ -11,7 +11,6 @@ use \Xpmock\TestCase;
  */
 class AbstractExpressionTest extends TestCase
 {
-
     /**
      * The name of the test subject.
      */
@@ -48,5 +47,4 @@ class AbstractExpressionTest extends TestCase
         $this->assertInstanceOf('\\Dhii\\Espresso\\ExpressionInterface', $subject);
         $this->assertInstanceOf('\\Dhii\\Evaluable\\EvaluableInterface', $subject);
     }
-
 }
