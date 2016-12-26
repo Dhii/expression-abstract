@@ -27,7 +27,7 @@ class AbstractContextTest extends TestCase
     {
         $mock = $this->mock(static::TEST_SUBJECT_CLASSNAME)
             ->getValue()
-            ->hasValue()
+            ->setValue()
             ->new();
 
         return $mock;
