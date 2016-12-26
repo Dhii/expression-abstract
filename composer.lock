@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6e153b2cb0a78f1fec88301377632a3b",
+    "hash": "1f172e9a995aa9fc51cd128a9e8fdfdc",
     "content-hash": "b0c70bbf368433ffbee965aa9117767f",
     "packages": [
         {
@@ -55,12 +55,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/espresso-interface.git",
-                "reference": "1a2db1007f91edf605ea99e168a95ecc9b9a45e8"
+                "reference": "6c8237e84e098b600be16846862f7ed165056e67"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/espresso-interface/zipball/1a2db1007f91edf605ea99e168a95ecc9b9a45e8",
-                "reference": "1a2db1007f91edf605ea99e168a95ecc9b9a45e8",
+                "url": "https://api.github.com/repos/Dhii/espresso-interface/zipball/6c8237e84e098b600be16846862f7ed165056e67",
+                "reference": "6c8237e84e098b600be16846862f7ed165056e67",
                 "shasum": ""
             },
             "require": {
@@ -92,7 +92,7 @@
                 "source": "https://github.com/Dhii/espresso-interface/tree/master",
                 "issues": "https://github.com/Dhii/espresso-interface/issues"
             },
-            "time": "2016-12-24 09:52:35"
+            "time": "2016-12-26 10:53:41"
         },
         {
             "name": "dhii/evaluable-interface",
