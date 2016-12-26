@@ -1,7 +1,8 @@
 <?php
 
-namespace Dhii\Espresso\Test;
+namespace Dhii\Espresso\Test\Term;
 
+use \Dhii\Espresso\Term\VariableTerm;
 use \Xpmock\TestCase;
 
 /**
@@ -37,7 +38,7 @@ class VariableTermTest extends TestCase
      */
     public function createInstance($identifier)
     {
-        return new \Dhii\Espresso\Term\VariableTerm($identifier);
+        return new VariableTerm($identifier);
     }
 
     /**
@@ -97,7 +98,6 @@ class VariableTermTest extends TestCase
                 return true;
             })
             ->setValue()
-            ->setValues()
             ->removeValue()
             ->new();
 

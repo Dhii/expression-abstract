@@ -1,6 +1,6 @@
 <?php
 
-namespace Dhii\Espresso\Test;
+namespace Dhii\Espresso\Test\Term;
 
 use \Dhii\Espresso\Term\LiteralTerm;
 use \Xpmock\TestCase;
