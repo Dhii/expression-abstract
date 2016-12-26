@@ -87,7 +87,7 @@ class VariableTermTest extends TestCase
         $value = 50;
 
         // Mock a context
-        $ctx = $this->mock('\\Dhii\\Espresso\\AbstractContext')
+        $ctx = $this->mock('\\Dhii\\Espresso\\AbstractCompositeContext')
             // Mock method to return the value
             ->getValue(function() use ($value) {
                 return $value;
@@ -96,6 +96,9 @@ class VariableTermTest extends TestCase
             ->hasValue(function() {
                 return true;
             })
+            ->setValue()
+            ->setValues()
+            ->removeValue()
             ->new();
 
         // Evaluate to get the result
@@ -127,7 +130,7 @@ class VariableTermTest extends TestCase
             ->new();
 
         // Expect an evaluation exception
-        $this->setExpectedException('\\Dhii\\Evaluable\\EvalExceptionInterface');
+        $this->setExpectedException('\\Dhii\\Evaluable\\EvaluationExceptionInterface');
 
         // Evaluate to get the result
         $this->subject->evaluate($ctx);
@@ -152,7 +155,7 @@ class VariableTermTest extends TestCase
             ->new();
 
         // Expect an evaluation exception
-        $this->setExpectedException('\\Dhii\\Evaluable\\EvalExceptionInterface');
+        $this->setExpectedException('\\Dhii\\Evaluable\\EvaluationExceptionInterface');
 
         // Evaluate to get the result
         $this->subject->evaluate($ctx);
