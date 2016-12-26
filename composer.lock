@@ -55,12 +55,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/espresso-interface.git",
-                "reference": "6c8237e84e098b600be16846862f7ed165056e67"
+                "reference": "e479d42da2a9fcf0b126547118e97a7925302084"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/espresso-interface/zipball/6c8237e84e098b600be16846862f7ed165056e67",
-                "reference": "6c8237e84e098b600be16846862f7ed165056e67",
+                "url": "https://api.github.com/repos/Dhii/espresso-interface/zipball/e479d42da2a9fcf0b126547118e97a7925302084",
+                "reference": "e479d42da2a9fcf0b126547118e97a7925302084",
                 "shasum": ""
             },
             "require": {
@@ -92,7 +92,7 @@
                 "source": "https://github.com/Dhii/espresso-interface/tree/master",
                 "issues": "https://github.com/Dhii/espresso-interface/issues"
             },
-            "time": "2016-12-26 10:53:41"
+            "time": "2016-12-26 12:36:12"
         },
         {
             "name": "dhii/evaluable-interface",
@@ -100,12 +100,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/evaluable-interface.git",
-                "reference": "796f6082346c32df3096872170490ac0fab0138a"
+                "reference": "0f8be30b357a8743b7664de1a5d70cc2a4976d6b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/evaluable-interface/zipball/796f6082346c32df3096872170490ac0fab0138a",
-                "reference": "796f6082346c32df3096872170490ac0fab0138a",
+                "url": "https://api.github.com/repos/Dhii/evaluable-interface/zipball/0f8be30b357a8743b7664de1a5d70cc2a4976d6b",
+                "reference": "0f8be30b357a8743b7664de1a5d70cc2a4976d6b",
                 "shasum": ""
             },
             "require": {
@@ -137,7 +137,7 @@
                 "source": "https://github.com/Dhii/evaluable-interface/tree/master",
                 "issues": "https://github.com/Dhii/evaluable-interface/issues"
             },
-            "time": "2016-12-23 14:41:14"
+            "time": "2016-12-26 11:50:31"
         }
     ],
     "packages-dev": [
