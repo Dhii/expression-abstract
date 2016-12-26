@@ -16,3 +16,7 @@ script:
 
 after_script:
     - vendor/bin/test-reporter --coverage-report="test/coverage/clover.xml"
+
+addons:
+    code_climate:
+        repo_token: 3b638d22b6ed7eebc373b55a6d0b0e812967e4edf7bae983f47904dcdaa4601a
