@@ -2,7 +2,7 @@
 
 namespace Dhii\Espresso;
 
-use Dhii\Evaluable\EvalExceptionInterface;
+use Dhii\Evaluable\EvaluationExceptionInterface;
 use Exception;
 
 /**
@@ -10,6 +10,6 @@ use Exception;
  *
  * @since [*next-version*]
  */
-class EvalException extends Exception implements EvalExceptionInterface
+class EvaluationException extends Exception implements EvaluationExceptionInterface
 {
 }

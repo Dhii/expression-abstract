@@ -4,8 +4,8 @@ namespace Dhii\Espresso\Term;
 
 use Dhii\Data\ValueAwareInterface;
 use Dhii\Espresso\ContextInterface;
-use Dhii\Espresso\EvalException;
 use Dhii\Evaluable\EvaluableInterface;
+use \Dhii\Espresso\EvaluationException;
 
 /**
  * A term whose value can vary depending on the context.
@@ -68,7 +68,7 @@ class VariableTerm implements EvaluableInterface
      *
      * @since [*next-version*]
      *
-     * @throws \Dhii\Espresso\EvalException If no context value
+     * @throws EvaluationException If no context value
      */
     public function evaluate(ValueAwareInterface $ctx = null)
     {
@@ -89,12 +89,12 @@ class VariableTerm implements EvaluableInterface
      * @param array $args A variable number of arguments that represent the message and
      *                    interpolation values, similar to the `printf()` family of functions.
      *
-     * @return \Dhii\Espresso\EvalException The exception.
+     * @return EvaluationException The exception.
      */
     protected function newEvalException(/* array $args... */)
     {
         $msg = call_user_func_array('sprintf', func_get_args());
 
-        return new EvalException($msg);
+        return new EvaluationException($msg);
     }
 }
