@@ -51,7 +51,7 @@ class LiteralTermTest extends TestCase
     /**
      * Tests whether the getter method returns the correct value.
      *
-     * @covers LiteralTerm::getValue
+     * @covers \Dhii\Espresso\Term\LiteralTerm::getValue
      *
      * @since [*next-version*]
      */
@@ -63,7 +63,7 @@ class LiteralTermTest extends TestCase
     /**
      * Tests whether the setter method correctly sets the new value.
      *
-     * @covers LiteralTerm::setValue
+     * @covers \Dhii\Espresso\Term\LiteralTerm::setValue
      *
      * @since [*next-version*]
      */
@@ -77,7 +77,7 @@ class LiteralTermTest extends TestCase
     /**
      * Tests whether the evaluation result is the same as the initial value, regardless of the context.
      *
-     * @covers LiteralTerm::evaluate
+     * @covers \Dhii\Espresso\Term\LiteralTerm::evaluate
      *
      * @since [*next-version*]
      */
