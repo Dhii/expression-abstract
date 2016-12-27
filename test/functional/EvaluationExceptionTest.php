@@ -2,8 +2,8 @@
 
 namespace Dhii\Espresso\Test;
 
-use \Dhii\Espresso\EvaluationException;
-use \Xpmock\TestCase;
+use Dhii\Espresso\EvaluationException;
+use Xpmock\TestCase;
 
 /**
  * Tests {@see \Dhii\Espresso\EvaluationException}}.

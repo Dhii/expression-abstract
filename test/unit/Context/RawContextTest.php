@@ -2,8 +2,8 @@
 
 namespace Dhii\Espresso\Test\Context;
 
-use \Dhii\Espresso\Context\RawContext;
-use \Xpmock\TestCase;
+use Dhii\Espresso\Context\RawContext;
+use Xpmock\TestCase;
 
 /**
  * Tests {@see \Dhii\Espresso\Context\RawContext}.
@@ -67,7 +67,7 @@ class RawContextTest extends TestCase
      */
     public function testGetValue()
     {
-        $value = 123456;
+        $value                                 = 123456;
         $this->reflect($this->instance)->value = $value;
 
         $this->assertEquals($value, $this->instance->getValue());

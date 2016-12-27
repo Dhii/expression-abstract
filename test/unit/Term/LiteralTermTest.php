@@ -2,11 +2,11 @@
 
 namespace Dhii\Espresso\Test\Term;
 
-use \Dhii\Espresso\Term\LiteralTerm;
-use \Xpmock\TestCase;
+use Dhii\Espresso\Term\LiteralTerm;
+use Xpmock\TestCase;
 
 /**
- * Description of LiteralTermTest
+ * Tests {@see \Dhii\Espresso\Term\LiteralTerm}.
  *
  * @since [*next-version*]
  */
@@ -85,7 +85,7 @@ class LiteralTermTest extends TestCase
     {
         // Mock a context that gives a value of 456
         $ctx = $this->mock('\\Dhii\\Data\\ValueAwareInterface')
-            ->getValue(function() {
+            ->getValue(function () {
                 return 456;
             })
             ->new();

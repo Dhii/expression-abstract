@@ -2,7 +2,7 @@
 
 namespace Dhii\Espresso\Test;
 
-use \Xpmock\TestCase;
+use Xpmock\TestCase;
 
 /**
  * Tests {@see Dhii\Espresso\AbstractContext}.

@@ -2,8 +2,8 @@
 
 namespace Dhii\Espresso\Test\Term;
 
-use \Dhii\Espresso\Term\VariableTerm;
-use \Xpmock\TestCase;
+use Dhii\Espresso\Term\VariableTerm;
+use Xpmock\TestCase;
 
 /**
  * Tests {@see \Dhii\Espresso\VariableTerm}.
@@ -12,7 +12,6 @@ use \Xpmock\TestCase;
  */
 class VariableTermTest extends TestCase
 {
-
     /**
      * The initial identifier used to instantiate the VariableTerm.
      */
@@ -90,11 +89,11 @@ class VariableTermTest extends TestCase
         // Mock a context
         $ctx = $this->mock('\\Dhii\\Espresso\\AbstractCompositeContext')
             // Mock method to return the value
-            ->getValue(function() use ($value) {
+            ->getValue(function () use ($value) {
                 return $value;
             })
             // Mock method to always return true
-            ->hasValue(function() {
+            ->hasValue(function () {
                 return true;
             })
             ->setValue()
@@ -120,11 +119,11 @@ class VariableTermTest extends TestCase
         // Mock a context
         $ctx = $this->mock('\\Dhii\\Espresso\\AbstractContext')
             // Mock method to return the value
-            ->getValue(function() {
+            ->getValue(function () {
                 return 50;
             })
             // Mock method to always return false
-            ->hasValue(function() {
+            ->hasValue(function () {
                 return false;
             })
             ->new();
@@ -149,7 +148,7 @@ class VariableTermTest extends TestCase
         // Mock a context
         $ctx = $this->mock('\\Dhii\\Data\\ValueAwareInterface')
             // Mock method to return the value
-            ->getValue(function() {
+            ->getValue(function () {
                 return 'foobar';
             })
             ->new();
@@ -160,5 +159,4 @@ class VariableTermTest extends TestCase
         // Evaluate to get the result
         $this->subject->evaluate($ctx);
     }
-
 }

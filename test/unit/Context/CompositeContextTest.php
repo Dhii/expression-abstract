@@ -2,8 +2,8 @@
 
 namespace Dhii\Espresso\Test\Context;
 
-use \Dhii\Espresso\Context\CompositeContext;
-use \Xpmock\TestCase;
+use Dhii\Espresso\Context\CompositeContext;
+use Xpmock\TestCase;
 
 /**
  * Tests {@see \Dhii\Espresso\Context\CompositeContext}.
@@ -62,8 +62,8 @@ class CompositeContextTest extends TestCase
      */
     public function testGetValueNoArgs()
     {
-        $values = array(1, 2, 3);
-        $reflect = $this->reflect($this->instance);
+        $values          = array(1, 2, 3);
+        $reflect         = $this->reflect($this->instance);
         $reflect->values = $values;
 
         $this->assertEquals($values, $reflect->getValue());
@@ -81,9 +81,9 @@ class CompositeContextTest extends TestCase
         $values = array(
             'one'   => 1,
             'two'   => 2,
-            'three' => 3
+            'three' => 3,
         );
-        $reflect = $this->reflect($this->instance);
+        $reflect         = $this->reflect($this->instance);
         $reflect->values = $values;
 
         $this->assertEquals(2, $reflect->getValue('two'));
@@ -101,9 +101,9 @@ class CompositeContextTest extends TestCase
         $values = array(
             'one'   => 1,
             'two'   => 2,
-            'three' => 3
+            'three' => 3,
         );
-        $reflect = $this->reflect($this->instance);
+        $reflect         = $this->reflect($this->instance);
         $reflect->values = $values;
 
         $this->assertEquals(null, $reflect->getValue('test'));
@@ -136,9 +136,9 @@ class CompositeContextTest extends TestCase
         $values = array(
             'one'   => 1,
             'two'   => 2,
-            'three' => 3
+            'three' => 3,
         );
-        $reflect = $this->reflect($this->instance);
+        $reflect         = $this->reflect($this->instance);
         $reflect->values = $values;
         $this->instance->setValue('two', 0);
 
@@ -157,9 +157,9 @@ class CompositeContextTest extends TestCase
         $values = array(
             'one'   => 1,
             'two'   => 2,
-            'three' => 3
+            'three' => 3,
         );
-        $reflect = $this->reflect($this->instance);
+        $reflect         = $this->reflect($this->instance);
         $reflect->values = $values;
         $this->instance->setValue('four', 4);
 
@@ -178,7 +178,7 @@ class CompositeContextTest extends TestCase
         $values = array(
             'one'   => 1,
             'two'   => 2,
-            'three' => 3
+            'three' => 3,
         );
         $this->reflect($this->instance)->values = $values;
 
@@ -197,7 +197,7 @@ class CompositeContextTest extends TestCase
         $values = array(
             'one'   => 1,
             'two'   => 2,
-            'three' => 3
+            'three' => 3,
         );
         $this->reflect($this->instance)->values = $values;
 
@@ -216,7 +216,7 @@ class CompositeContextTest extends TestCase
         $before = array(
             'one'   => 1,
             'two'   => 2,
-            'three' => 3
+            'three' => 3,
         );
         $this->reflect($this->instance)->values = $before;
 
@@ -238,7 +238,7 @@ class CompositeContextTest extends TestCase
         $before = array(
             'one'   => 1,
             'two'   => 2,
-            'three' => 3
+            'three' => 3,
         );
         $this->reflect($this->instance)->values = $before;
 
