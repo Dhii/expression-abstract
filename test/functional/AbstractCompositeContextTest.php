@@ -25,9 +25,7 @@ class AbstractCompositeContextTest extends \Xpmock\TestCase
     {
         $mock = $this->mock(static::TEST_SUBJECT_CLASSNAME)
             ->getValue()
-            ->setValue()
             ->hasValue()
-            ->removeValue()
             ->new();
 
         return $mock;
