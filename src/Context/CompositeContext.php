@@ -39,9 +39,13 @@ class CompositeContext extends AbstractCompositeContext
      */
     public function getValue($key = null)
     {
-        return is_null($key)
-            ? $this->values
-            : $this->values[$key];
+        if (is_null($key)) {
+            return $this->values;
+        }
+
+        return isset($this->values[$key])
+            ? $this->values[$key]
+            : null;
     }
 
     /**
