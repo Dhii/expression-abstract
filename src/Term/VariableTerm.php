@@ -2,10 +2,10 @@
 
 namespace Dhii\Espresso\Term;
 
-use \Dhii\Data\ValueAwareInterface;
-use \Dhii\Espresso\AbstractCompositeContext;
-use \Dhii\Espresso\EvaluationException;
-use \Dhii\Evaluable\EvaluableInterface;
+use Dhii\Data\ValueAwareInterface;
+use Dhii\Espresso\AbstractCompositeContext;
+use Dhii\Espresso\EvaluationException;
+use Dhii\Evaluable\EvaluableInterface;
 
 /**
  * A term whose value can vary depending on the context.
