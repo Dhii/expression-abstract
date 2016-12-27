@@ -29,7 +29,7 @@ class CompositeContext extends AbstractCompositeContext
      */
     public function __construct(array $values)
     {
-        $this->setValues($values);
+        $this->setValue($values);
     }
 
     /**
