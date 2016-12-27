@@ -27,7 +27,7 @@ class CompositeContext extends AbstractCompositeContext
      *
      * @param array $values The context values.
      */
-    public function __construct(array $values)
+    public function __construct(array $values = array())
     {
         $this->setValue($values);
     }
