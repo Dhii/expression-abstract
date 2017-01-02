@@ -55,12 +55,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Dhii/espresso-interface.git",
-                "reference": "7de75d478dc94587a16323cf56cfaec4fe5aca21"
+                "reference": "a6f8a68c517378d1dfa72742d3a766e51902e8c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Dhii/espresso-interface/zipball/7de75d478dc94587a16323cf56cfaec4fe5aca21",
-                "reference": "7de75d478dc94587a16323cf56cfaec4fe5aca21",
+                "url": "https://api.github.com/repos/Dhii/espresso-interface/zipball/a6f8a68c517378d1dfa72742d3a766e51902e8c7",
+                "reference": "a6f8a68c517378d1dfa72742d3a766e51902e8c7",
                 "shasum": ""
             },
             "require": {
@@ -92,7 +92,7 @@
                 "source": "https://github.com/Dhii/espresso-interface/tree/master",
                 "issues": "https://github.com/Dhii/espresso-interface/issues"
             },
-            "time": "2017-01-02 17:52:31"
+            "time": "2017-01-02 18:46:15"
         },
         {
             "name": "dhii/evaluable-interface",
