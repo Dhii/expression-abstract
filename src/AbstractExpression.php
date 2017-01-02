@@ -31,7 +31,7 @@ abstract class AbstractExpression implements ExpressionInterface
      *
      * @return static This instance.
      */
-    public function addTerm(EvaluableInterface $term)
+    protected function _addTerm(EvaluableInterface $term)
     {
         $this->terms[] = $term;
 
@@ -47,7 +47,7 @@ abstract class AbstractExpression implements ExpressionInterface
      *
      * @return static This instance.
      */
-    public function setTerms(array $terms)
+    protected function _setTerms(array $terms)
     {
         $this->terms = array();
         foreach ($terms as $term) {
@@ -70,7 +70,7 @@ abstract class AbstractExpression implements ExpressionInterface
      *
      * @return $this This instance.
      */
-    public function removeTerm($index)
+    protected function _removeTerm($index)
     {
         unset($this->terms[$index]);
 
