@@ -59,11 +59,11 @@ abstract class AbstractExpression implements ExpressionInterface
     {
         $this->terms = array();
         foreach ($terms as $term) {
-            if ($term instanceof EvaluableInterface) {
-                $this->addTerm($term);
-            } else {
+            if (!($term instanceof EvaluableInterface)) {
                 trigger_error('One of the given terms does not implement EvaluableInterface!', E_USER_NOTICE);
+                continue;
             }
+            $this->addTerm($term);
         }
 
         return $this;
