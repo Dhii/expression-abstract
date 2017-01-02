@@ -12,12 +12,16 @@ use Dhii\Evaluable\EvaluableInterface;
 abstract class AbstractExpression implements ExpressionInterface
 {
     /**
+     * @since [*next-version*]
+     *
      * @var EvaluableInterface[]
      */
     protected $terms = array();
 
     /**
      * {@inheritdoc}
+     *
+     * @since [*next-version*]
      */
     public function getTerms()
     {
@@ -26,6 +30,8 @@ abstract class AbstractExpression implements ExpressionInterface
 
     /**
      * Adds a single term to the expression.
+     *
+     * @since [*next-version*]
      *
      * @param EvaluableInterface $term The term instance to add.
      *
@@ -42,6 +48,8 @@ abstract class AbstractExpression implements ExpressionInterface
      * Sets the expression terms.
      *
      * This method will emit an `E_USER_NOTICE` if an array element does not implement `EvaluableInterface.`
+     *
+     * @since [*next-version*]
      *
      * @param EvaluableInterface[] $terms An array of EvaluableInterface instances.
      *
