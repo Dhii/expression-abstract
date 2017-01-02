@@ -9,10 +9,4 @@ namespace Dhii\Espresso;
  */
 abstract class AbstractCompositeContext extends AbstractContext implements CompositeContextInterface
 {
-    /**
-     * {@inheritdoc}
-     *
-     * @since [*next-version*]
-     */
-    abstract public function getValue($key = null);
 }
