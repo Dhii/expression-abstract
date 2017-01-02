@@ -1,6 +1,6 @@
 {
-    "name": "dhii/espresso",
-    "description": "A PHP expression builder and evaluation library.",
+    "name": "dhii/espresso-abstract",
+    "description": "Abstract classes for Espresso.",
     "type": "library",
     "license": "MIT",
     "authors": [
