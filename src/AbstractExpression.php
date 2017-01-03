@@ -29,22 +29,6 @@ abstract class AbstractExpression implements ExpressionInterface
     }
 
     /**
-     * Adds a single term to the expression.
-     *
-     * @since [*next-version*]
-     *
-     * @param EvaluableInterface $term The term instance to add.
-     *
-     * @return static This instance.
-     */
-    protected function _addTerm(EvaluableInterface $term)
-    {
-        $this->terms[] = $term;
-
-        return $this;
-    }
-
-    /**
      * Sets the expression terms.
      *
      * This method will emit an `E_USER_NOTICE` if an array element does not implement `EvaluableInterface.`
@@ -67,6 +51,38 @@ abstract class AbstractExpression implements ExpressionInterface
         }
 
         return $this;
+    }
+
+    /**
+     * Adds a single term to the expression.
+     *
+     * @since [*next-version*]
+     *
+     * @param EvaluableInterface $term The term instance to add.
+     *
+     * @return static This instance.
+     */
+    protected function _addTerm(EvaluableInterface $term)
+    {
+        $this->terms[] = $term;
+
+        return $this;
+    }
+
+    /**
+     * Gets the term at the given index.
+     *
+     * @since [*next-version*]
+     *
+     * @param int $index The zero-based integer index of the term to retrieve.
+     *
+     * @return EvaluableInterface The term instance or null if the index is invalid.
+     */
+    protected function _getTerm($index)
+    {
+        return isset($this->terms[$index])
+            ? $this->terms[$index]
+            : null;
     }
 
     /**
