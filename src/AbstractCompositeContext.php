@@ -16,11 +16,20 @@ abstract class AbstractCompositeContext extends AbstractContext implements Compo
      */
     public function getValueOf($key)
     {
-        if ($this->hasValue($key)) {
-            $values = $this->getValue();
-            return $values[$key];
-        }
-
-        return null;
+        return $this->hasValue($key)
+            ? $this->_getValueOf($key)
+            : null;
     }
+
+    /**
+     * Gets the contextual value associated with the given key.
+     *
+     * @internal The {@see AbstractCompositeContext::getValueOf} method already checks for the exists of
+     *           the given key so none such check is required in the implementation of this method.
+     *
+     * @param string $key The key.
+     *
+     * @return mixed The value associated with the given key.
+     */
+    abstract protected function _getValueOf($key);
 }
