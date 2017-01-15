@@ -11,13 +11,6 @@ use Dhii\Data\ValueAwareInterface;
  */
 abstract class AbstractOperatorExpression extends AbstractBufferedExpression
 {
-    protected function _initBuffer(ValueAwareInterface $ctx = null)
-    {
-        return count($this->getTerms()) > 0
-            ? $this->_singleValue($ctx)
-            : $this->_defaultValue($ctx);
-    }
-
     /**
      * {@inheritdoc}
      *
