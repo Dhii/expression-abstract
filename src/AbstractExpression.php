@@ -47,7 +47,7 @@ abstract class AbstractExpression implements ExpressionInterface
                 trigger_error('One of the given terms does not implement EvaluableInterface!', E_USER_NOTICE);
                 continue;
             }
-            $this->addTerm($term);
+            $this->_addTerm($term);
         }
 
         return $this;
