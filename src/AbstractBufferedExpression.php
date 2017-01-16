@@ -18,20 +18,30 @@ use Dhii\Evaluable\EvaluableInterface;
 abstract class AbstractBufferedExpression extends AbstractExpression
 {
     /**
+     * The minimum number of terms.
+     */
+    const MIN_TERMS = 1;
+
+    /**
      * {@inheritdoc}
      *
      * @since [*next-version*]
      */
     public function evaluate(ValueAwareInterface $ctx = null)
     {
-        $terms  = $this->_getOrderedTerms($ctx);
-        $buffer = count($terms) > 0
-            ? $this->_initBuffer($ctx)
-            : $this->_defaultValue($ctx);
+        $terms    = $this->_getOrderedTerms($ctx);
+        $numTerms = count($terms);
 
-        foreach ($terms as $term) {
-            $next   = $this->_evaluateTerm($term, $ctx);
-            $buffer = $this->_updateBuffer($buffer, $next, $ctx);
+        if ($numTerms < static::MIN_TERMS) {
+            return $this->_defaultValue($ctx);
+        }
+
+        // Set buffer to first term's eval result
+        $buffer = $this->_evaluateTerm($terms[0], $ctx);
+
+        for ($i = 1; $i < $numTerms; ++$i) {
+            $_next  = $this->_evaluateTerm($terms[$i], $ctx);
+            $buffer = $this->_updateBuffer($buffer, $_next, $ctx);
         }
 
         return $buffer;
@@ -67,18 +77,7 @@ abstract class AbstractBufferedExpression extends AbstractExpression
     }
 
     /**
-     * Gets the initial value of the buffer.
-     *
-     * @since [*next-version*]
-     *
-     * @param ValueAwareInterface $ctx [optional] The context. Default: null
-     *
-     * @return mixed The initial buffer result.
-     */
-    abstract protected function _initBuffer(ValueAwareInterface $ctx = null);
-
-    /**
-     * Gets the expression value when it has no terms.
+     * Gets the expression value when it doesn't have a sufficient number of terms.
      *
      * @since [*next-version*]
      *
