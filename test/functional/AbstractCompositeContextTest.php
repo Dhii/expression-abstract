@@ -38,8 +38,6 @@ class AbstractCompositeContextTest extends \Xpmock\TestCase
     /**
      * Tests whether a valid instance of the test subject can be created.
      *
-     * @covers \Dhii\Expression\AbstractCompositeContext
-     *
      * @since [*next-version*]
      */
     public function testCanBeCreated()
