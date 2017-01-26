@@ -23,11 +23,15 @@ abstract class AbstractBufferedExpression extends AbstractExpression
     const MIN_TERMS = 1;
 
     /**
-     * {@inheritdoc}
+     * Evaluates the expression.
      *
      * @since [*next-version*]
+     *
+     * @param ValueAwareInterface $ctx [optional] The context. Default: null
+     *
+     * @return mixed The result.
      */
-    public function evaluate(ValueAwareInterface $ctx = null)
+    protected function _evaluate(ValueAwareInterface $ctx = null)
     {
         $terms    = $this->_getOrderedTerms($ctx);
         $numTerms = count($terms);
