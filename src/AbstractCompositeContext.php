@@ -7,29 +7,98 @@ namespace Dhii\Expression;
  *
  * @since [*next-version*]
  */
-abstract class AbstractCompositeContext extends AbstractContext implements CompositeContextInterface
+abstract class AbstractCompositeContext extends AbstractContext
 {
-    /**
-     * {@inheritdoc}
-     *
-     * @since [*next-version*]
-     */
-    public function getValueOf($key)
-    {
-        return $this->hasValue($key)
-            ? $this->_getValueOf($key)
-            : null;
-    }
-
     /**
      * Gets the contextual value associated with the given key.
      *
-     * @internal The {@see AbstractCompositeContext::getValueOf} method already checks for the exists of
-     *           the given key so none such check is required in the implementation of this method.
+     * @since [*next-version*]
      *
      * @param string $key The key.
      *
      * @return mixed The value associated with the given key.
      */
-    abstract protected function _getValueOf($key);
+    protected function _getValueOf($key)
+    {
+        return $this->_hasValue($key)
+            ? $this->value[$key]
+            : null;
+    }
+
+    /**
+     * Checks if the context has a value associated with a specific key.
+     *
+     * @since [*next-version*]
+     *
+     * @param string $key The key.
+     *
+     * @return bool True if a value exists for the given key; false otherwise.
+     */
+    protected function _hasValue($key)
+    {
+        return isset($this->value[$key]);
+    }
+
+    /**
+     * Registers a value to the context.
+     *
+     * @since [*next-version*]
+     *
+     * @param string|array $key   The key of the value or an associative array of values.
+     * @param mixed        $value The value.
+     *
+     * @return $this This instance.
+     */
+    protected function _setValue($key, $value = null)
+    {
+        if (is_array($key)) {
+            $this->value = $key;
+
+            return $this;
+        }
+
+        $this->value[$key] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Removes a value from the context.
+     *
+     * @param string $key The key.
+     *
+     * @return $this This instance.
+     */
+    protected function _removeValue($key)
+    {
+        unset($this->value[$key]);
+
+        return $this;
+    }
+
+    /**
+     * Clears the context by removing all values.
+     *
+     * @since [*next-version*]
+     *
+     * @return $this
+     */
+    protected function _clearValues()
+    {
+        $this->value = array();
+
+        return $this;
+    }
+
+    /**
+     * Gets all of the values in this context.
+     *
+     * @since [*next-version*]
+     *
+     * @return array An associative array containing all the values mapped by their keys.
+     */
+    protected function _getValues()
+    {
+        return $this->value;
+    }
 }
