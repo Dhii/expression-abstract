@@ -1,6 +1,6 @@
 {
-    "name": "dhii/espresso-abstract",
-    "description": "Abstract classes for Espresso.",
+    "name": "dhii/expression-abstract",
+    "description": "Abstract expression implementations.",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -12,7 +12,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": "^5.3.9 | ^7.0",
-        "dhii/espresso-interface": "dev-master"
+        "dhii/expression-interface": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.8",
@@ -23,20 +23,5 @@
         "psr-4": {
             "Dhii\\Espresso\\": "src/"
         }
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/Dhii/espresso-interface"
-        },
-        {
-            
-            "type": "vcs",
-            "url": "https://github.com/Dhii/evaluable-interface"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/Dhii/data-key-value-aware-interface"
-        }
-    ]
+    }
 }
