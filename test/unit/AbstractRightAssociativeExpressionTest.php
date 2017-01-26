@@ -71,7 +71,7 @@ class AbstractRightAssocOperatorExpressionTest extends TestCase
     {
         $subject = $this->createInstance();
 
-        $this->assertEquals(0, $subject->evaluate());
+        $this->assertEquals(0, $subject->this()->_evaluate());
     }
 
     /**
@@ -86,7 +86,7 @@ class AbstractRightAssocOperatorExpressionTest extends TestCase
             $this->mockTerm(2)
         );
 
-        $this->assertEquals(2, $subject->evaluate());
+        $this->assertEquals(2, $subject->this()->_evaluate());
     }
 
     /**
@@ -102,7 +102,7 @@ class AbstractRightAssocOperatorExpressionTest extends TestCase
             $this->mockTerm(10)
         );
 
-        $this->assertEquals(5, $subject->evaluate());
+        $this->assertEquals(5, $subject->this()->_evaluate());
     }
 
     /**
@@ -119,7 +119,7 @@ class AbstractRightAssocOperatorExpressionTest extends TestCase
             $this->mockTerm(4)
         );
 
-        $this->assertEquals(0.2, $subject->evaluate());
+        $this->assertEquals(0.2, $subject->this()->_evaluate());
     }
 
 }
