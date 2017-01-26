@@ -26,7 +26,8 @@ class AbstractContextTest extends TestCase
     public function createInstance()
     {
         $mock = $this->mock(static::TEST_SUBJECT_CLASSNAME)
-            ->getValue()
+            ->_getValue()
+            ->_setValue()
             ->new();
 
         return $mock;
@@ -44,7 +45,5 @@ class AbstractContextTest extends TestCase
         $subject = $this->createInstance();
 
         $this->assertInstanceOf(static::TEST_SUBJECT_CLASSNAME, $subject);
-        $this->assertInstanceOf('\\Dhii\\Expression\\ContextInterface', $subject);
-        $this->assertInstanceOf('\\Dhii\\Data\\ValueAwareInterface', $subject);
     }
 }
