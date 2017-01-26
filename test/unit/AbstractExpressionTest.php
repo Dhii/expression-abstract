@@ -63,8 +63,6 @@ class AbstractExpressionTest extends TestCase
         $subject = $this->createInstance();
 
         $this->assertInstanceOf(static::TEST_SUBJECT_CLASSNAME, $subject);
-        $this->assertInstanceOf('\\Dhii\\Expression\\ExpressionInterface', $subject);
-        $this->assertInstanceOf('\\Dhii\\Evaluable\\EvaluableInterface', $subject);
     }
 
     /**
@@ -79,7 +77,7 @@ class AbstractExpressionTest extends TestCase
 
         $subject->this()->terms = array(1, 2, 3, $term);
 
-        $this->assertEquals(array(1, 2, 3, $term), $subject->getTerms());
+        $this->assertEquals(array(1, 2, 3, $term), $subject->this()->_getTerms());
     }
 
     /**
