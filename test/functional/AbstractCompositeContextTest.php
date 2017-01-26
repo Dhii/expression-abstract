@@ -24,10 +24,12 @@ class AbstractCompositeContextTest extends \Xpmock\TestCase
     public function createInstance()
     {
         $mock = $this->mock(static::TEST_SUBJECT_CLASSNAME)
-            ->getValue()
-            ->getValueOf()
             ->_getValueOf()
-            ->hasValue()
+            ->_hasValue()
+            ->_setValue()
+            ->_removeValue()
+            ->_clearValues()
+            ->_getValues()
             ->new();
 
         return $mock;
@@ -45,8 +47,6 @@ class AbstractCompositeContextTest extends \Xpmock\TestCase
         $subject = $this->createInstance();
 
         $this->assertInstanceOf(static::TEST_SUBJECT_CLASSNAME, $subject);
-        $this->assertInstanceOf('\\Dhii\\Expression\\CompositeContextInterface', $subject);
         $this->assertInstanceOf('\\Dhii\\Expression\\AbstractContext', $subject);
-        $this->assertInstanceOf('\\Dhii\\Data\\ValueAwareInterface', $subject);
     }
 }
