@@ -1,13 +1,13 @@
 <?php
 
-namespace Dhii\Espresso\Test;
+namespace Dhii\Expression\Test;
 
-use \Dhii\Espresso\AbstractOperatorExpression;
+use \Dhii\Expression\AbstractOperatorExpression;
 use \Dhii\Evaluable\EvaluableInterface;
 use \Xpmock\TestCase;
 
 /**
- * Tests {@see Dhii\Espresso\AbstractOperatorExpression}.
+ * Tests {@see Dhii\Expression\AbstractOperatorExpression}.
  *
  * @since [*next-version*]
  */
@@ -17,7 +17,7 @@ class AbstractOperatorExpressionTest extends TestCase
     /**
      * The name of the test subject.
      */
-    const TEST_SUBJECT_CLASSNAME = 'Dhii\\Espresso\\AbstractOperatorExpression';
+    const TEST_SUBJECT_CLASSNAME = 'Dhii\\Expression\\AbstractOperatorExpression';
 
     /**
      * Creates an instance of the test subject.

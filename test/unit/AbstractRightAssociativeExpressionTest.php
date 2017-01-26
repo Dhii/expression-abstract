@@ -1,13 +1,13 @@
 <?php
 
-namespace Dhii\Espresso\Test;
+namespace Dhii\Expression\Test;
 
-use \Dhii\Espresso\AbstractRightAssocOperatorExpression;
+use \Dhii\Expression\AbstractRightAssocOperatorExpression;
 use \Dhii\Evaluable\EvaluableInterface;
 use \Xpmock\TestCase;
 
 /**
- * Tests {@see \Dhii\Espresso\AbstractRightAssocOperatorExpression}.
+ * Tests {@see \Dhii\Expression\AbstractRightAssocOperatorExpression}.
  *
  * @since [*next-version*]
  */
@@ -17,7 +17,7 @@ class AbstractRightAssocOperatorExpressionTest extends TestCase
     /**
      * The name of the test subject.
      */
-    const TEST_SUBJECT_CLASSNAME = 'Dhii\\Espresso\\AbstractRightAssocOperatorExpression';
+    const TEST_SUBJECT_CLASSNAME = 'Dhii\\Expression\\AbstractRightAssocOperatorExpression';
 
     /**
      * Creates an instance of the test subject.

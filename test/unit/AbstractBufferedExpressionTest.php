@@ -1,13 +1,13 @@
 <?php
 
-namespace Dhii\Espresso\Test;
+namespace Dhii\Expression\Test;
 
-use \Dhii\Espresso\AbstractBufferedExpression;
+use \Dhii\Expression\AbstractBufferedExpression;
 use \Dhii\Evaluable\EvaluableInterface;
 use \Xpmock\TestCase;
 
 /**
- * Tests {@see \Dhii\Espresso\AbstractBufferedExpression}.
+ * Tests {@see \Dhii\Expression\AbstractBufferedExpression}.
  *
  * @since [*next-version*]
  */
@@ -17,7 +17,7 @@ class AbstractBufferedExpressionTest extends TestCase
     /**
      * The name of the test subject.
      */
-    const TEST_SUBJECT_CLASSNAME = 'Dhii\\Espresso\\AbstractBufferedExpression';
+    const TEST_SUBJECT_CLASSNAME = 'Dhii\\Expression\\AbstractBufferedExpression';
 
     /**
      * Creates an instance of the test subject.

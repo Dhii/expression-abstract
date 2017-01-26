@@ -1,8 +1,8 @@
 <?php
 
-namespace Dhii\Espresso\Test;
+namespace Dhii\Expression\Test;
 
-use \Dhii\Espresso\AbstractExpression;
+use \Dhii\Expression\AbstractExpression;
 use \Dhii\Evaluable\EvaluableInterface;
 use \Xpmock\TestCase;
 
@@ -17,7 +17,7 @@ class AbstractExpressionTest extends TestCase
     /**
      * The name of the test subject.
      */
-    const TEST_SUBJECT_CLASSNAME = 'Dhii\\Espresso\\AbstractExpression';
+    const TEST_SUBJECT_CLASSNAME = 'Dhii\\Expression\\AbstractExpression';
 
     /**
      * Creates an instance of the test subject.
@@ -54,7 +54,7 @@ class AbstractExpressionTest extends TestCase
     /**
      * Tests whether a valid instance of the test subject can be created.
      *
-     * @covers \Dhii\Espresso\AbstractExpression
+     * @covers \Dhii\Expression\AbstractExpression
      *
      * @since [*next-version*]
      */
@@ -63,7 +63,7 @@ class AbstractExpressionTest extends TestCase
         $subject = $this->createInstance();
 
         $this->assertInstanceOf(static::TEST_SUBJECT_CLASSNAME, $subject);
-        $this->assertInstanceOf('\\Dhii\\Espresso\\ExpressionInterface', $subject);
+        $this->assertInstanceOf('\\Dhii\\Expression\\ExpressionInterface', $subject);
         $this->assertInstanceOf('\\Dhii\\Evaluable\\EvaluableInterface', $subject);
     }
 

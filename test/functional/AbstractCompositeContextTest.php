@@ -1,9 +1,9 @@
 <?php
 
-namespace Dhii\Espresso\Test;
+namespace Dhii\Expression\Test;
 
 /**
- * Tests {@see \Dhii\Espresso\AbstractCompositeContext}.
+ * Tests {@see \Dhii\Expression\AbstractCompositeContext}.
  *
  * @since [*next-version*]
  */
@@ -12,14 +12,14 @@ class AbstractCompositeContextTest extends \Xpmock\TestCase
     /**
      * The name of the test subject.
      */
-    const TEST_SUBJECT_CLASSNAME = '\\Dhii\\Espresso\\AbstractCompositeContext';
+    const TEST_SUBJECT_CLASSNAME = '\\Dhii\\Expression\\AbstractCompositeContext';
 
     /**
      * Creates a new instance of the test subject.
      *
      * @since [*next=version*]
      *
-     * @return Dhii\Espresso\AbstractCompositeContext
+     * @return Dhii\Expression\AbstractCompositeContext
      */
     public function createInstance()
     {
@@ -36,7 +36,7 @@ class AbstractCompositeContextTest extends \Xpmock\TestCase
     /**
      * Tests whether a valid instance of the test subject can be created.
      *
-     * @covers \Dhii\Espresso\AbstractCompositeContext
+     * @covers \Dhii\Expression\AbstractCompositeContext
      *
      * @since [*next-version*]
      */
@@ -45,8 +45,8 @@ class AbstractCompositeContextTest extends \Xpmock\TestCase
         $subject = $this->createInstance();
 
         $this->assertInstanceOf(static::TEST_SUBJECT_CLASSNAME, $subject);
-        $this->assertInstanceOf('\\Dhii\\Espresso\\CompositeContextInterface', $subject);
-        $this->assertInstanceOf('\\Dhii\\Espresso\\AbstractContext', $subject);
+        $this->assertInstanceOf('\\Dhii\\Expression\\CompositeContextInterface', $subject);
+        $this->assertInstanceOf('\\Dhii\\Expression\\AbstractContext', $subject);
         $this->assertInstanceOf('\\Dhii\\Data\\ValueAwareInterface', $subject);
     }
 }
