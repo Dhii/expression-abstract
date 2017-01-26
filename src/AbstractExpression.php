@@ -9,7 +9,7 @@ use Dhii\Evaluable\EvaluableInterface;
  *
  * @since [*next-version*]
  */
-abstract class AbstractExpression implements ExpressionInterface
+abstract class AbstractExpression
 {
     /**
      * @since [*next-version*]
@@ -19,11 +19,13 @@ abstract class AbstractExpression implements ExpressionInterface
     protected $terms = array();
 
     /**
-     * {@inheritdoc}
+     * Retrieves the expression terms.
      *
      * @since [*next-version*]
+     *
+     * @return EvaluableInterface[] An array of terms.
      */
-    public function getTerms()
+    protected function _getTerms()
     {
         return $this->terms;
     }
@@ -97,6 +99,20 @@ abstract class AbstractExpression implements ExpressionInterface
     protected function _removeTerm($index)
     {
         unset($this->terms[$index]);
+
+        return $this;
+    }
+
+    /**
+     * Clears the expression by removing all the terms.
+     *
+     * @since [*next-version*]
+     *
+     * @return $this This instance.
+     */
+    protected function _clearTerms()
+    {
+        $this->terms = array();
 
         return $this;
     }
