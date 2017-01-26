@@ -21,6 +21,6 @@ abstract class AbstractRightAssocOperatorExpression extends AbstractOperatorExpr
      */
     protected function _getOrderedTerms(ValueAwareInterface $ctx = null)
     {
-        return array_reverse($this->getTerms());
+        return array_reverse($this->_getTerms());
     }
 }

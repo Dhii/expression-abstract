@@ -73,7 +73,7 @@ abstract class AbstractBufferedExpression extends AbstractExpression
      */
     protected function _getOrderedTerms(ValueAwareInterface $ctx = null)
     {
-        return $this->getTerms();
+        return $this->_getTerms();
     }
 
     /**
