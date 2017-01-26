@@ -69,7 +69,7 @@ class AbstractOperatorExpressionTest extends TestCase
     {
         $subject = $this->createInstance();
 
-        $this->assertEquals(0, $subject->evaluate());
+        $this->assertEquals(0, $subject->this()->_evaluate());
     }
 
     /**
@@ -84,7 +84,7 @@ class AbstractOperatorExpressionTest extends TestCase
             $this->mockTerm(5)
         );
 
-        $this->assertEquals(5, $subject->evaluate());
+        $this->assertEquals(5, $subject->this()->_evaluate());
     }
 
     /**
@@ -100,7 +100,7 @@ class AbstractOperatorExpressionTest extends TestCase
             $this->mockTerm(8)
         );
 
-        $this->assertEquals(13, $subject->evaluate());
+        $this->assertEquals(13, $subject->this()->_evaluate());
     }
 
     /**
@@ -119,7 +119,7 @@ class AbstractOperatorExpressionTest extends TestCase
             $this->mockTerm(3)
         );
 
-        $this->assertEquals(22, $subject->evaluate());
+        $this->assertEquals(22, $subject->this()->_evaluate());
     }
 
 }
