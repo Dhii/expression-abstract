@@ -65,6 +65,8 @@ abstract class AbstractCompositeContext extends AbstractContext
     /**
      * Removes a value from the context.
      *
+     * @since 0.1
+     *
      * @param string $key The key.
      *
      * @return $this This instance.

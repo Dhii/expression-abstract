@@ -19,6 +19,8 @@ abstract class AbstractBufferedExpression extends AbstractExpression
 {
     /**
      * The minimum number of terms.
+     *
+     * @since 0.1
      */
     const MIN_TERMS = 1;
 

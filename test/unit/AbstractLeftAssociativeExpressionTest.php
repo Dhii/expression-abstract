@@ -16,6 +16,8 @@ class AbstractLeftAssocOperatorExpressionTest extends TestCase
 
     /**
      * The name of the test subject.
+     *
+     * @since 0.1
      */
     const TEST_SUBJECT_CLASSNAME = 'Dhii\\Expression\\AbstractLeftAssocOperatorExpression';
 
