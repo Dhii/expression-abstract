@@ -13,7 +13,7 @@ use Dhii\Evaluable\EvaluableInterface;
  *
  * After going through all the terms in the expression, the buffer will yield the result.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 abstract class AbstractBufferedExpression extends AbstractExpression
 {
@@ -25,7 +25,7 @@ abstract class AbstractBufferedExpression extends AbstractExpression
     /**
      * Evaluates the expression.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param ValueAwareInterface $ctx [optional] The context. Default: null
      *
@@ -54,7 +54,7 @@ abstract class AbstractBufferedExpression extends AbstractExpression
     /**
      * Evaluates the given term.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param EvaluableInterface  $term The term instance.
      * @param ValueAwareInterface $ctx  [optional] The context. Default: null
@@ -69,7 +69,7 @@ abstract class AbstractBufferedExpression extends AbstractExpression
     /**
      * Gets the terms in the order they are meant to be evaluated.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param ValueAwareInterface $ctx [optional] The context. Default: null
      *
@@ -83,7 +83,7 @@ abstract class AbstractBufferedExpression extends AbstractExpression
     /**
      * Gets the expression value when it doesn't have a sufficient number of terms.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param ValueAwareInterface $ctx [optional] The context. Default: null
      *
@@ -94,7 +94,7 @@ abstract class AbstractBufferedExpression extends AbstractExpression
     /**
      * Updates the buffer with the next term value.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param mixed               $buffer The current buffer value.
      * @param mixed               $next   The value of the next term.

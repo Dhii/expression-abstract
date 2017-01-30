@@ -9,7 +9,7 @@ use \Xpmock\TestCase;
 /**
  * Tests {@see Dhii\Expression\AbstractOperatorExpression}.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 class AbstractOperatorExpressionTest extends TestCase
 {
@@ -22,7 +22,7 @@ class AbstractOperatorExpressionTest extends TestCase
     /**
      * Creates an instance of the test subject.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return AbstractOperatorExpression
      */
@@ -46,7 +46,7 @@ class AbstractOperatorExpressionTest extends TestCase
     /**
      * Creates a mock term instance that simply returns a specific value.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param mixed $value The value to return.
      *
@@ -63,7 +63,7 @@ class AbstractOperatorExpressionTest extends TestCase
     /**
      * Tests the evaluation without any terms.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testNoTerms()
     {
@@ -75,7 +75,7 @@ class AbstractOperatorExpressionTest extends TestCase
     /**
      * Tests the evaluation with just 1 term.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testSingleTerm()
     {
@@ -90,7 +90,7 @@ class AbstractOperatorExpressionTest extends TestCase
     /**
      * Tests the evaluation with 2 terms.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testTwoTerms()
     {
@@ -106,7 +106,7 @@ class AbstractOperatorExpressionTest extends TestCase
     /**
      * Tests the evaluation with multiple terms.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testMultipleTerms()
     {

@@ -5,14 +5,14 @@ namespace Dhii\Expression;
 /**
  * Abstract implementation of a composite context.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 abstract class AbstractCompositeContext extends AbstractContext
 {
     /**
      * Gets the contextual value associated with the given key.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param string $key The key.
      *
@@ -28,7 +28,7 @@ abstract class AbstractCompositeContext extends AbstractContext
     /**
      * Checks if the context has a value associated with a specific key.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param string $key The key.
      *
@@ -42,7 +42,7 @@ abstract class AbstractCompositeContext extends AbstractContext
     /**
      * Registers a value to the context.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param string|array $key   The key of the value or an associative array of values.
      * @param mixed        $value The value.
@@ -79,7 +79,7 @@ abstract class AbstractCompositeContext extends AbstractContext
     /**
      * Clears the context by removing all values.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return $this
      */
@@ -93,7 +93,7 @@ abstract class AbstractCompositeContext extends AbstractContext
     /**
      * Gets all of the values in this context.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return array An associative array containing all the values mapped by their keys.
      */

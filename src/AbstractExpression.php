@@ -7,12 +7,12 @@ use Dhii\Evaluable\EvaluableInterface;
 /**
  * An abstract expression implementation that provides term array management.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 abstract class AbstractExpression
 {
     /**
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @var EvaluableInterface[]
      */
@@ -21,7 +21,7 @@ abstract class AbstractExpression
     /**
      * Retrieves the expression terms.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return EvaluableInterface[] An array of terms.
      */
@@ -35,7 +35,7 @@ abstract class AbstractExpression
      *
      * This method will emit an `E_USER_NOTICE` if an array element does not implement `EvaluableInterface.`
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param EvaluableInterface[] $terms An array of EvaluableInterface instances.
      *
@@ -58,7 +58,7 @@ abstract class AbstractExpression
     /**
      * Adds a single term to the expression.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param EvaluableInterface $term The term instance to add.
      *
@@ -74,7 +74,7 @@ abstract class AbstractExpression
     /**
      * Gets the term at the given index.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param int $index The zero-based integer index of the term to retrieve.
      *
@@ -90,7 +90,7 @@ abstract class AbstractExpression
     /**
      * Removes the term at the given index.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param int $index An integer representing a zero-based index.
      *
@@ -106,7 +106,7 @@ abstract class AbstractExpression
     /**
      * Clears the expression by removing all the terms.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return $this This instance.
      */

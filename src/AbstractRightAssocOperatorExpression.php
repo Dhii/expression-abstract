@@ -10,14 +10,14 @@ use Dhii\Data\ValueAwareInterface;
  * A right associative expression is an expression that evaluates its terms in reverse order.
  * ie. last to first, right to left.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 abstract class AbstractRightAssocOperatorExpression extends AbstractOperatorExpression
 {
     /**
      * {@inheritdoc}
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     protected function _getOrderedTerms(ValueAwareInterface $ctx = null)
     {

@@ -7,14 +7,14 @@ use Dhii\Data\ValueAwareInterface;
 /**
  * An abstract implementation of an expression that evaluates using an operator.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 abstract class AbstractOperatorExpression extends AbstractBufferedExpression
 {
     /**
      * {@inheritdoc}
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     protected function _updateBuffer($buffer, $next, ValueAwareInterface $ctx = null)
     {
@@ -24,7 +24,7 @@ abstract class AbstractOperatorExpression extends AbstractBufferedExpression
     /**
      * Invokes the operator for the two given operands.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param mixed               $left  The left operand value.
      * @param mixed               $right The right operand value.

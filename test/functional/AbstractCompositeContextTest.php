@@ -5,12 +5,14 @@ namespace Dhii\Expression\Test;
 /**
  * Tests {@see \Dhii\Expression\AbstractCompositeContext}.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 class AbstractCompositeContextTest extends \Xpmock\TestCase
 {
     /**
      * The name of the test subject.
+     *
+     * @since 0.1
      */
     const TEST_SUBJECT_CLASSNAME = '\\Dhii\\Expression\\AbstractCompositeContext';
 
@@ -38,7 +40,7 @@ class AbstractCompositeContextTest extends \Xpmock\TestCase
     /**
      * Tests whether a valid instance of the test subject can be created.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testCanBeCreated()
     {

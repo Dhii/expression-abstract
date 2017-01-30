@@ -7,12 +7,14 @@ use Xpmock\TestCase;
 /**
  * Tests {@see Dhii\Expression\AbstractContext}.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 class AbstractContextTest extends TestCase
 {
     /**
      * The name of the test subject.
+     *
+     * @since 0.1
      */
     const TEST_SUBJECT_CLASSNAME = '\\Dhii\\Expression\\AbstractContext';
 
@@ -36,7 +38,7 @@ class AbstractContextTest extends TestCase
     /**
      * Tests whether a valid instance of the test subject can be created.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testCanBeCreated()
     {

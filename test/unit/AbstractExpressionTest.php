@@ -9,7 +9,7 @@ use \Xpmock\TestCase;
 /**
  * Description of AbstractExpressionTest
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 class AbstractExpressionTest extends TestCase
 {
@@ -22,7 +22,7 @@ class AbstractExpressionTest extends TestCase
     /**
      * Creates an instance of the test subject.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return AbstractExpression
      */
@@ -37,7 +37,7 @@ class AbstractExpressionTest extends TestCase
     /**
      * Creates a mock term instance that simply returns a specific value.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param mixed $value The value to return.
      *
@@ -56,7 +56,7 @@ class AbstractExpressionTest extends TestCase
      *
      * @covers \Dhii\Expression\AbstractExpression
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testCanBeCreated()
     {
@@ -68,7 +68,7 @@ class AbstractExpressionTest extends TestCase
     /**
      * Tests the protected term getter method.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testGetTerms()
     {
@@ -83,7 +83,7 @@ class AbstractExpressionTest extends TestCase
     /**
      * Tests the protected term setter method.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testSetTerms()
     {
@@ -99,7 +99,7 @@ class AbstractExpressionTest extends TestCase
     /**
      * Tests the protected term setter method with an invalid term. A notice should be produced.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testSetTermsInvalidTerm()
     {
@@ -117,7 +117,7 @@ class AbstractExpressionTest extends TestCase
     /**
      * Tests the protected term adder method.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testAddTerm()
     {
@@ -133,7 +133,7 @@ class AbstractExpressionTest extends TestCase
     /**
      * Tests the protected term removal method.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testRemoveTerm()
     {

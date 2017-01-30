@@ -9,7 +9,7 @@ use \Xpmock\TestCase;
 /**
  * Tests {@see \Dhii\Expression\AbstractLeftAssocOperatorExpression}.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 class AbstractLeftAssocOperatorExpressionTest extends TestCase
 {
@@ -22,7 +22,7 @@ class AbstractLeftAssocOperatorExpressionTest extends TestCase
     /**
      * Creates an instance of the test subject.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return AbstractLeftAssocOperatorExpression
      */
@@ -48,7 +48,7 @@ class AbstractLeftAssocOperatorExpressionTest extends TestCase
     /**
      * Creates a mock term instance that simply returns a specific value.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param mixed $value The value to return.
      *
@@ -65,7 +65,7 @@ class AbstractLeftAssocOperatorExpressionTest extends TestCase
     /**
      * Tests the evaluation without any terms.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testNoTerms()
     {
@@ -77,7 +77,7 @@ class AbstractLeftAssocOperatorExpressionTest extends TestCase
     /**
      * Tests the evaluation with just 1 term.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testSingleTerm()
     {
@@ -92,7 +92,7 @@ class AbstractLeftAssocOperatorExpressionTest extends TestCase
     /**
      * Tests the evaluation with 2 terms.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testTwoTerms()
     {
@@ -108,7 +108,7 @@ class AbstractLeftAssocOperatorExpressionTest extends TestCase
     /**
      * Tests the evaluation with multiple terms.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testMultipleTerms()
     {
