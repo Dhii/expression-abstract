@@ -2,18 +2,17 @@
 
 namespace Dhii\Expression\Test;
 
-use \Dhii\Expression\AbstractBufferedExpression;
-use \Dhii\Evaluable\EvaluableInterface;
-use \Xpmock\TestCase;
+use Dhii\Expression\AbstractBufferedExpression;
+use Dhii\Evaluable\EvaluableInterface;
+use Xpmock\TestCase;
 
 /**
- * Tests {@see \Dhii\Expression\AbstractBufferedExpression}.
+ * Tests {@see Dhii\Expression\AbstractBufferedExpression}.
  *
  * @since 0.1
  */
 class AbstractBufferedExpressionTest extends TestCase
 {
-
     /**
      * The name of the test subject.
      *
@@ -31,13 +30,13 @@ class AbstractBufferedExpressionTest extends TestCase
     public function createInstance()
     {
         $mock = $this->mock(static::TEST_SUBJECT_CLASSNAME)
-            ->_initBuffer(function() {
+            ->_initBuffer(function () {
                 return 0;
             })
-            ->_defaultValue(function() {
+            ->_defaultValue(function () {
                 return 0;
             })
-            ->_updateBuffer(function($buffer, $next) {
+            ->_updateBuffer(function ($buffer, $next) {
                 return intval($buffer) + intval($next);
             })
         ;
@@ -83,7 +82,7 @@ class AbstractBufferedExpressionTest extends TestCase
     {
         $subject = $this->createInstance();
         $subject->this()->terms = array(
-            $this->mockTerm(5)
+            $this->mockTerm(5),
         );
 
         $this->assertEquals(5, $subject->this()->_evaluate());
@@ -99,7 +98,7 @@ class AbstractBufferedExpressionTest extends TestCase
         $subject = $this->createInstance();
         $subject->this()->terms = array(
             $this->mockTerm(5),
-            $this->mockTerm(8)
+            $this->mockTerm(8),
         );
 
         $this->assertEquals(13, $subject->this()->_evaluate());
@@ -118,10 +117,9 @@ class AbstractBufferedExpressionTest extends TestCase
             $this->mockTerm(8),
             $this->mockTerm(2),
             $this->mockTerm(4),
-            $this->mockTerm(3)
+            $this->mockTerm(3),
         );
 
         $this->assertEquals(22, $subject->this()->_evaluate());
     }
-
 }

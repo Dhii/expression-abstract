@@ -2,18 +2,17 @@
 
 namespace Dhii\Expression\Test;
 
-use \Dhii\Expression\AbstractExpression;
-use \Dhii\Evaluable\EvaluableInterface;
-use \Xpmock\TestCase;
+use Dhii\Expression\AbstractExpression;
+use Dhii\Evaluable\EvaluableInterface;
+use Xpmock\TestCase;
 
 /**
- * Description of AbstractExpressionTest
+ * Tests {@see Dhii\Expression\AbstractExpression}.
  *
  * @since 0.1
  */
 class AbstractExpressionTest extends TestCase
 {
-
     /**
      * The name of the test subject.
      *

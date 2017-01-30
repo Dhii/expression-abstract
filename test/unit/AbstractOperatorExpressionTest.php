@@ -2,9 +2,9 @@
 
 namespace Dhii\Expression\Test;
 
-use \Dhii\Expression\AbstractOperatorExpression;
-use \Dhii\Evaluable\EvaluableInterface;
-use \Xpmock\TestCase;
+use Dhii\Expression\AbstractOperatorExpression;
+use Dhii\Evaluable\EvaluableInterface;
+use Xpmock\TestCase;
 
 /**
  * Tests {@see Dhii\Expression\AbstractOperatorExpression}.
@@ -13,7 +13,6 @@ use \Xpmock\TestCase;
  */
 class AbstractOperatorExpressionTest extends TestCase
 {
-
     /**
      * The name of the test subject.
      *
@@ -31,13 +30,13 @@ class AbstractOperatorExpressionTest extends TestCase
     public function createInstance()
     {
         $mock = $this->mock(static::TEST_SUBJECT_CLASSNAME)
-            ->_initBuffer(function() {
+            ->_initBuffer(function () {
                 return 0;
             })
-            ->_defaultValue(function() {
+            ->_defaultValue(function () {
                 return 0;
             })
-            ->_operator(function($left, $right) {
+            ->_operator(function ($left, $right) {
                 return intval($left) + intval($right);
             })
         ;
@@ -83,7 +82,7 @@ class AbstractOperatorExpressionTest extends TestCase
     {
         $subject = $this->createInstance();
         $subject->this()->terms = array(
-            $this->mockTerm(5)
+            $this->mockTerm(5),
         );
 
         $this->assertEquals(5, $subject->this()->_evaluate());
@@ -99,7 +98,7 @@ class AbstractOperatorExpressionTest extends TestCase
         $subject = $this->createInstance();
         $subject->this()->terms = array(
             $this->mockTerm(5),
-            $this->mockTerm(8)
+            $this->mockTerm(8),
         );
 
         $this->assertEquals(13, $subject->this()->_evaluate());
@@ -118,10 +117,9 @@ class AbstractOperatorExpressionTest extends TestCase
             $this->mockTerm(8),
             $this->mockTerm(2),
             $this->mockTerm(4),
-            $this->mockTerm(3)
+            $this->mockTerm(3),
         );
 
         $this->assertEquals(22, $subject->this()->_evaluate());
     }
-
 }

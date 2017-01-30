@@ -2,18 +2,17 @@
 
 namespace Dhii\Expression\Test;
 
-use \Dhii\Expression\AbstractRightAssocOperatorExpression;
-use \Dhii\Evaluable\EvaluableInterface;
-use \Xpmock\TestCase;
+use Dhii\Expression\AbstractRightAssocOperatorExpression;
+use Dhii\Evaluable\EvaluableInterface;
+use Xpmock\TestCase;
 
 /**
- * Tests {@see \Dhii\Expression\AbstractRightAssocOperatorExpression}.
+ * Tests {@see Dhii\Expression\AbstractRightAssocOperatorExpression}.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
-class AbstractRightAssocOperatorExpressionTest extends TestCase
+class AbstractRightAssociativeExpressionTest extends TestCase
 {
-
     /**
      * The name of the test subject.
      *
@@ -31,13 +30,13 @@ class AbstractRightAssocOperatorExpressionTest extends TestCase
     public function createInstance()
     {
         $mock = $this->mock(static::TEST_SUBJECT_CLASSNAME)
-            ->_initBuffer(function() {
-                return null;
+            ->_initBuffer(function () {
+                return;
             })
-            ->_defaultValue(function() {
+            ->_defaultValue(function () {
                 return 0;
             })
-            ->_operator(function($left, $right) {
+            ->_operator(function ($left, $right) {
                 return is_null($left)
                     ? $right
                     : $left / $right;
@@ -85,7 +84,7 @@ class AbstractRightAssocOperatorExpressionTest extends TestCase
     {
         $subject = $this->createInstance();
         $subject->this()->terms = array(
-            $this->mockTerm(2)
+            $this->mockTerm(2),
         );
 
         $this->assertEquals(2, $subject->this()->_evaluate());
@@ -101,7 +100,7 @@ class AbstractRightAssocOperatorExpressionTest extends TestCase
         $subject = $this->createInstance();
         $subject->this()->terms = array(
             $this->mockTerm(2),
-            $this->mockTerm(10)
+            $this->mockTerm(10),
         );
 
         $this->assertEquals(5, $subject->this()->_evaluate());
@@ -118,10 +117,9 @@ class AbstractRightAssocOperatorExpressionTest extends TestCase
         $subject->this()->terms = array(
             $this->mockTerm(2),
             $this->mockTerm(10),
-            $this->mockTerm(4)
+            $this->mockTerm(4),
         );
 
         $this->assertEquals(0.2, $subject->this()->_evaluate());
     }
-
 }
