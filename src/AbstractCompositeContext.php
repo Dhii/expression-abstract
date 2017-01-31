@@ -51,13 +51,23 @@ abstract class AbstractCompositeContext extends AbstractContext
      */
     protected function _setValue($key, $value = null)
     {
-        if (is_array($key)) {
-            $this->value = $key;
-
-            return $this;
-        }
-
         $this->value[$key] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Sets the entire value set.
+     *
+     * @since 0.1
+     *
+     * @param array $values An associative array of key-value pairs.
+     *
+     * @return $this This instance.
+     */
+    protected function _setValues(array $values)
+    {
+        $this->value = $values;
 
         return $this;
     }
