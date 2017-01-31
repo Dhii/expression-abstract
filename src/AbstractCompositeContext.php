@@ -16,7 +16,7 @@ abstract class AbstractCompositeContext extends AbstractContext
      *
      * @param string $key The key.
      *
-     * @return mixed The value associated with the given key.
+     * @return mixed The value associated with the given key, or null if the key was not found.
      */
     protected function _getValueOf($key)
     {
