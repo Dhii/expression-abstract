@@ -35,6 +35,24 @@ abstract class AbstractBufferedExpression extends AbstractExpression
      */
     protected function _evaluate(ValueAwareInterface $ctx = null)
     {
+        return $this->_eval();
+    }
+
+    /**
+     * Does the actual evaluation of the expression.
+     *
+     * This method is used to separate the actual basic evaluation logic for buffered expressions
+     * from the _evaluate method. This allows extending classes to override that method without
+     * losing functionality; especially useful while creating mocks for testing.
+     *
+     * @since 0.1
+     *
+     * @param ValueAwareInterface $ctx [optional] The context. Default: null
+     *
+     * @return mixed The result.
+     */
+    protected function _eval(ValueAwareInterface $ctx = null)
+    {
         $terms    = $this->_getOrderedTerms($ctx);
         $numTerms = count($terms);
 
