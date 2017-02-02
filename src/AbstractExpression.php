@@ -98,7 +98,7 @@ abstract class AbstractExpression
      */
     protected function _removeTerm($index)
     {
-        unset($this->terms[$index]);
+        array_splice($this->terms, $index, 1, array());
 
         return $this;
     }

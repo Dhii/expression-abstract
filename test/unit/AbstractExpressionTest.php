@@ -146,4 +146,26 @@ class AbstractExpressionTest extends TestCase
 
         $this->assertEquals(array(1, 3, $term), array_values($subject->this()->terms));
     }
+
+    /**
+     * Tests the single term getter method after terms have been removed from the expression.
+     *
+     * @since 0.1
+     */
+    public function testGetTermAfterRemoval()
+    {
+        $subject = $this->createInstance();
+
+        $subject->this()->terms = array(
+            $this->mockTerm(5),
+            $this->mockTerm(2),
+            $this->mockTerm(9)
+        );
+
+        $this->assertEquals($this->mockTerm(9), $subject->this()->_getTerm(2));
+
+        $subject->this()->_removeTerm(1);
+
+        $this->assertEquals($this->mockTerm(9), $subject->this()->_getTerm(1));
+    }
 }
