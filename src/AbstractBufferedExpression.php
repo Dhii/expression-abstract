@@ -35,7 +35,7 @@ abstract class AbstractBufferedExpression extends AbstractExpression
      */
     protected function _evaluate(ValueAwareInterface $ctx = null)
     {
-        return $this->_eval();
+        return $this->_eval($ctx);
     }
 
     /**
