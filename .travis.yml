@@ -16,3 +16,7 @@ script:
 
 after_script:
     - vendor/bin/test-reporter --coverage-report="test/coverage/clover.xml"
+
+cache:
+  directories:
+    - $HOME/.composer/cache/files
