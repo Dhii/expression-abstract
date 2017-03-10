@@ -55,8 +55,6 @@ class AbstractExpressionTest extends TestCase
     /**
      * Tests whether a valid instance of the test subject can be created.
      *
-     * @covers \Dhii\Expression\AbstractExpression
-     *
      * @since 0.1
      */
     public function testCanBeCreated()
