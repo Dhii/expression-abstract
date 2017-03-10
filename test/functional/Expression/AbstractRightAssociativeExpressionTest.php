@@ -1,6 +1,6 @@
 <?php
 
-namespace Dhii\Expression\Test\Expression;
+namespace Dhii\Expression\FuncTest\Expression;
 
 use Dhii\Expression\Expression\AbstractRightAssocOperatorExpression;
 use Dhii\Evaluable\EvaluableInterface;

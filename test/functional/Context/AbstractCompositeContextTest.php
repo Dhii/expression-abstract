@@ -1,6 +1,6 @@
 <?php
 
-namespace Dhii\Expression\Test\Context;
+namespace Dhii\Expression\FuncTest\Context;
 
 use Dhii\Expression\Context\AbstractCompositeContext;
 use Xpmock\TestCase;
