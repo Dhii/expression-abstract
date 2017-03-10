@@ -1,6 +1,6 @@
 <?php
 
-namespace Dhii\Expression;
+namespace Dhii\Expression\Context;
 
 /**
  * Abstract implementation of a composite context.

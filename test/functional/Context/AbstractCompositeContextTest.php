@@ -1,20 +1,23 @@
 <?php
 
-namespace Dhii\Expression\Test;
+namespace Dhii\Expression\Test\Context;
+
+use Dhii\Expression\Context\AbstractCompositeContext;
+use Xpmock\TestCase;
 
 /**
- * Tests {@see \Dhii\Expression\AbstractCompositeContext}.
+ * Tests {@see \Dhii\Expression\Context\AbstractCompositeContext}.
  *
  * @since 0.1
  */
-class AbstractCompositeContextTest extends \Xpmock\TestCase
+class AbstractCompositeContextTest extends TestCase
 {
     /**
      * The name of the test subject.
      *
      * @since 0.1
      */
-    const TEST_SUBJECT_CLASSNAME = '\\Dhii\\Expression\\AbstractCompositeContext';
+    const TEST_SUBJECT_CLASSNAME = '\\Dhii\\Expression\\Context\\AbstractCompositeContext';
 
     /**
      * Creates a new instance of the test subject.
@@ -23,7 +26,7 @@ class AbstractCompositeContextTest extends \Xpmock\TestCase
      *
      * @param array $values An array of context values. Default: array()
      *
-     * @return Dhii\Expression\AbstractCompositeContext
+     * @return AbstractCompositeContext
      */
     public function createInstance(array $values = array())
     {
@@ -45,7 +48,7 @@ class AbstractCompositeContextTest extends \Xpmock\TestCase
         $subject = $this->createInstance();
 
         $this->assertInstanceOf(static::TEST_SUBJECT_CLASSNAME, $subject);
-        $this->assertInstanceOf('\\Dhii\\Expression\\AbstractContext', $subject);
+        $this->assertInstanceOf('\\Dhii\\Expression\\Context\\AbstractContext', $subject);
     }
 
     /**
