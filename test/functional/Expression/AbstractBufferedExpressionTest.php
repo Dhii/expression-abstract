@@ -80,7 +80,7 @@ class AbstractBufferedExpressionTest extends TestCase
      */
     public function testSingleTerm()
     {
-        $subject = $this->createInstance();
+        $subject                = $this->createInstance();
         $subject->this()->terms = array(
             $this->mockTerm(5),
         );
@@ -95,7 +95,7 @@ class AbstractBufferedExpressionTest extends TestCase
      */
     public function testTwoTerms()
     {
-        $subject = $this->createInstance();
+        $subject                = $this->createInstance();
         $subject->this()->terms = array(
             $this->mockTerm(5),
             $this->mockTerm(8),
@@ -111,7 +111,7 @@ class AbstractBufferedExpressionTest extends TestCase
      */
     public function testMultipleTerms()
     {
-        $subject = $this->createInstance();
+        $subject                = $this->createInstance();
         $subject->this()->terms = array(
             $this->mockTerm(5),
             $this->mockTerm(8),

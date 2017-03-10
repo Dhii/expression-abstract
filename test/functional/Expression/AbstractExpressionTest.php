@@ -74,7 +74,7 @@ class AbstractExpressionTest extends TestCase
     public function testGetTerms()
     {
         $subject = $this->createInstance();
-        $term = $this->mockTerm(10);
+        $term    = $this->mockTerm(10);
 
         $subject->this()->terms = array(1, 2, 3, $term);
 
@@ -89,8 +89,8 @@ class AbstractExpressionTest extends TestCase
     public function testSetTerms()
     {
         $subject = $this->createInstance();
-        $term1 = $this->mockTerm(1);
-        $term2 = $this->mockTerm(2);
+        $term1   = $this->mockTerm(1);
+        $term2   = $this->mockTerm(2);
 
         $subject->this()->_setTerms(array($term1, $term2));
 
@@ -105,8 +105,8 @@ class AbstractExpressionTest extends TestCase
     public function testSetTermsInvalidTerm()
     {
         $subject = $this->createInstance();
-        $term1 = $this->mockTerm(1);
-        $term2 = 5.5;
+        $term1   = $this->mockTerm(1);
+        $term2   = 5.5;
 
         $this->setExpectedException('PHPUnit_Framework_Error');
 
@@ -123,7 +123,7 @@ class AbstractExpressionTest extends TestCase
     public function testAddTerm()
     {
         $subject = $this->createInstance();
-        $term = $this->mockTerm(10);
+        $term    = $this->mockTerm(10);
 
         $subject->this()->terms = array(1, 2, 3);
         $subject->this()->_addTerm($term);
@@ -139,7 +139,7 @@ class AbstractExpressionTest extends TestCase
     public function testRemoveTerm()
     {
         $subject = $this->createInstance();
-        $term = $this->mockTerm(10);
+        $term    = $this->mockTerm(10);
 
         $subject->this()->terms = array(1, 2, 3, $term);
         $subject->this()->_removeTerm(1);
@@ -159,7 +159,7 @@ class AbstractExpressionTest extends TestCase
         $subject->this()->terms = array(
             $this->mockTerm(5),
             $this->mockTerm(2),
-            $this->mockTerm(9)
+            $this->mockTerm(9),
         );
 
         $this->assertEquals($this->mockTerm(9), $subject->this()->_getTerm(2));

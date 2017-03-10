@@ -82,7 +82,7 @@ class AbstractLeftAssociativeExpressionTest extends TestCase
      */
     public function testSingleTerm()
     {
-        $subject = $this->createInstance();
+        $subject                = $this->createInstance();
         $subject->this()->terms = array(
             $this->mockTerm(2),
         );
@@ -97,7 +97,7 @@ class AbstractLeftAssociativeExpressionTest extends TestCase
      */
     public function testTwoTerms()
     {
-        $subject = $this->createInstance();
+        $subject                = $this->createInstance();
         $subject->this()->terms = array(
             $this->mockTerm(2),
             $this->mockTerm(10),
@@ -113,7 +113,7 @@ class AbstractLeftAssociativeExpressionTest extends TestCase
      */
     public function testMultipleTerms()
     {
-        $subject = $this->createInstance();
+        $subject                = $this->createInstance();
         $subject->this()->terms = array(
             $this->mockTerm(2),
             $this->mockTerm(10),
