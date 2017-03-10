@@ -1,8 +1,8 @@
 <?php
 
-namespace Dhii\Expression\Test;
+namespace Dhii\Expression\Test\Expression;
 
-use Dhii\Expression\AbstractExpression;
+use Dhii\Expression\Expression\AbstractExpression;
 use Dhii\Evaluable\EvaluableInterface;
 use Xpmock\TestCase;
 
@@ -18,7 +18,7 @@ class AbstractExpressionTest extends TestCase
      *
      * @since 0.1
      */
-    const TEST_SUBJECT_CLASSNAME = 'Dhii\\Expression\\AbstractExpression';
+    const TEST_SUBJECT_CLASSNAME = 'Dhii\\Expression\\Expression\\AbstractExpression';
 
     /**
      * Creates an instance of the test subject.

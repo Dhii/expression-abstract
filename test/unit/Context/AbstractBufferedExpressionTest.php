@@ -1,45 +1,43 @@
 <?php
 
-namespace Dhii\Expression\Test;
+namespace Dhii\Expression\Test\Expression;
 
-use Dhii\Expression\AbstractLeftAssocOperatorExpression;
+use Dhii\Expression\Expression\AbstractBufferedExpression;
 use Dhii\Evaluable\EvaluableInterface;
 use Xpmock\TestCase;
 
 /**
- * Tests {@see Dhii\Expression\AbstractLeftAssocOperatorExpression}.
+ * Tests {@see Dhii\Expression\Expression\AbstractBufferedExpression}.
  *
  * @since 0.1
  */
-class AbstractLeftAssociativeExpressionTest extends TestCase
+class AbstractBufferedExpressionTest extends TestCase
 {
     /**
      * The name of the test subject.
      *
      * @since 0.1
      */
-    const TEST_SUBJECT_CLASSNAME = 'Dhii\\Expression\\AbstractLeftAssocOperatorExpression';
+    const TEST_SUBJECT_CLASSNAME = 'Dhii\\Expression\\Expression\\AbstractBufferedExpression';
 
     /**
      * Creates an instance of the test subject.
      *
      * @since 0.1
      *
-     * @return AbstractLeftAssocOperatorExpression
+     * @return AbstractBufferedExpression
      */
     public function createInstance()
     {
         $mock = $this->mock(static::TEST_SUBJECT_CLASSNAME)
             ->_initBuffer(function () {
-                return;
+                return 0;
             })
             ->_defaultValue(function () {
                 return 0;
             })
-            ->_operator(function ($left, $right) {
-                return is_null($left)
-                    ? $right
-                    : $left / $right;
+            ->_updateBuffer(function ($buffer, $next) {
+                return intval($buffer) + intval($next);
             })
         ;
 
@@ -84,10 +82,10 @@ class AbstractLeftAssociativeExpressionTest extends TestCase
     {
         $subject = $this->createInstance();
         $subject->this()->terms = array(
-            $this->mockTerm(2),
+            $this->mockTerm(5),
         );
 
-        $this->assertEquals(2, $subject->this()->_evaluate());
+        $this->assertEquals(5, $subject->this()->_evaluate());
     }
 
     /**
@@ -99,11 +97,11 @@ class AbstractLeftAssociativeExpressionTest extends TestCase
     {
         $subject = $this->createInstance();
         $subject->this()->terms = array(
-            $this->mockTerm(2),
-            $this->mockTerm(10),
+            $this->mockTerm(5),
+            $this->mockTerm(8),
         );
 
-        $this->assertEquals(0.2, $subject->this()->_evaluate());
+        $this->assertEquals(13, $subject->this()->_evaluate());
     }
 
     /**
@@ -115,11 +113,13 @@ class AbstractLeftAssociativeExpressionTest extends TestCase
     {
         $subject = $this->createInstance();
         $subject->this()->terms = array(
+            $this->mockTerm(5),
+            $this->mockTerm(8),
             $this->mockTerm(2),
-            $this->mockTerm(10),
             $this->mockTerm(4),
+            $this->mockTerm(3),
         );
 
-        $this->assertEquals(0.05, $subject->this()->_evaluate());
+        $this->assertEquals(22, $subject->this()->_evaluate());
     }
 }

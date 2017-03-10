@@ -1,6 +1,6 @@
 <?php
 
-namespace Dhii\Expression;
+namespace Dhii\Expression\Expression;
 
 use Dhii\Data\ValueAwareInterface;
 

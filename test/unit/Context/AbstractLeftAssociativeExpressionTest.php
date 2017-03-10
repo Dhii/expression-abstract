@@ -1,31 +1,31 @@
 <?php
 
-namespace Dhii\Expression\Test;
+namespace Dhii\Expression\Test\Expression;
 
-use Dhii\Expression\AbstractRightAssocOperatorExpression;
+use Dhii\Expression\Expression\AbstractLeftAssocOperatorExpression;
 use Dhii\Evaluable\EvaluableInterface;
 use Xpmock\TestCase;
 
 /**
- * Tests {@see Dhii\Expression\AbstractRightAssocOperatorExpression}.
+ * Tests {@see Dhii\Expression\AbstractLeftAssocOperatorExpression}.
  *
  * @since 0.1
  */
-class AbstractRightAssociativeExpressionTest extends TestCase
+class AbstractLeftAssociativeExpressionTest extends TestCase
 {
     /**
      * The name of the test subject.
      *
      * @since 0.1
      */
-    const TEST_SUBJECT_CLASSNAME = 'Dhii\\Expression\\AbstractRightAssocOperatorExpression';
+    const TEST_SUBJECT_CLASSNAME = 'Dhii\\Expression\\Expression\\AbstractLeftAssocOperatorExpression';
 
     /**
      * Creates an instance of the test subject.
      *
      * @since 0.1
      *
-     * @return AbstractRightAssocOperatorExpression
+     * @return AbstractLeftAssocOperatorExpression
      */
     public function createInstance()
     {
@@ -103,7 +103,7 @@ class AbstractRightAssociativeExpressionTest extends TestCase
             $this->mockTerm(10),
         );
 
-        $this->assertEquals(5, $subject->this()->_evaluate());
+        $this->assertEquals(0.2, $subject->this()->_evaluate());
     }
 
     /**
@@ -120,6 +120,6 @@ class AbstractRightAssociativeExpressionTest extends TestCase
             $this->mockTerm(4),
         );
 
-        $this->assertEquals(0.2, $subject->this()->_evaluate());
+        $this->assertEquals(0.05, $subject->this()->_evaluate());
     }
 }

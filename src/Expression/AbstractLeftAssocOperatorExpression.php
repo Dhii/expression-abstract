@@ -1,6 +1,6 @@
 <?php
 
-namespace Dhii\Expression;
+namespace Dhii\Expression\Expression;
 
 /**
  * Abstract implementation of a left associative expression.

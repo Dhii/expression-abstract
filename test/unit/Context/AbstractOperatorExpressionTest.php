@@ -1,31 +1,31 @@
 <?php
 
-namespace Dhii\Expression\Test;
+namespace Dhii\Expression\Test\Expression;
 
-use Dhii\Expression\AbstractBufferedExpression;
+use Dhii\Expression\Expression\AbstractOperatorExpression;
 use Dhii\Evaluable\EvaluableInterface;
 use Xpmock\TestCase;
 
 /**
- * Tests {@see Dhii\Expression\AbstractBufferedExpression}.
+ * Tests {@see Dhii\Expression\AbstractOperatorExpression}.
  *
  * @since 0.1
  */
-class AbstractBufferedExpressionTest extends TestCase
+class AbstractOperatorExpressionTest extends TestCase
 {
     /**
      * The name of the test subject.
      *
      * @since 0.1
      */
-    const TEST_SUBJECT_CLASSNAME = 'Dhii\\Expression\\AbstractBufferedExpression';
+    const TEST_SUBJECT_CLASSNAME = 'Dhii\\Expression\\Expression\\AbstractOperatorExpression';
 
     /**
      * Creates an instance of the test subject.
      *
      * @since 0.1
      *
-     * @return AbstractBufferedExpression
+     * @return AbstractOperatorExpression
      */
     public function createInstance()
     {
@@ -36,8 +36,8 @@ class AbstractBufferedExpressionTest extends TestCase
             ->_defaultValue(function () {
                 return 0;
             })
-            ->_updateBuffer(function ($buffer, $next) {
-                return intval($buffer) + intval($next);
+            ->_operator(function ($left, $right) {
+                return intval($left) + intval($right);
             })
         ;
 
