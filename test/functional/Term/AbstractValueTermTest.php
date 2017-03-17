@@ -29,12 +29,7 @@ class AbstractValueTermTest extends TestCase
     public function createInstance()
     {
         $mock = $this->mock(static::TEST_SUBJECT_CLASSNAME)
-            ->_evalValue(function($value, $ctx = null) {
-                return $value;
-            })
-            ->_assertContextValid(function($ctx) {
-                return true;
-            })
+            ->_evaluate()
             ->_createEvaluationException()
             ->new();
 
@@ -82,20 +77,5 @@ class AbstractValueTermTest extends TestCase
 
         $this->assertEquals('foobar', $subject->this()->value, 'Subject did not set the correct value internally.');
         $this->assertSame($subject, $return, 'Subject did not return a reference of itself');
-    }
-
-    /**
-     * Tests the evaluation.
-     *
-     * @since [*next-version*]
-     */
-    public function testEvaluate()
-    {
-        $subject = $this->createInstance();
-        $subject->this()->value = 60;
-
-        $result = $subject->this()->_evaluate();
-
-        $this->assertEquals(60, $result);
     }
 }

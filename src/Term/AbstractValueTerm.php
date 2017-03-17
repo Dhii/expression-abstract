@@ -57,38 +57,10 @@ abstract class AbstractValueTerm
      * @param ValueAwareInterface $ctx [Optional] The context. Default: null
      *
      * @return mixed The evaluated result.
+     *
+     * @throws EvaluationExceptionInterface If an error occurs during evaluation.
      */
-    protected function _evaluate(ValueAwareInterface $ctx = null)
-    {
-        $this->_assertContextValid($ctx);
-
-        return $this->_evalValue($this->_getValue(), $ctx);
-    }
-
-    /**
-     * Evaluates a value using a given context.
-     *
-     * @since [*next-version*]
-     *
-     * @param mixed $value The term value.
-     * @param ValueAwareInterface $ctx [Optional] The context. Default: null
-     *
-     * @return mixed The evaluated result.
-     */
-    abstract protected function _evalValue($value, ValueAwareInterface $ctx = null);
-
-    /**
-     * Asserts whether the given context is considered valid for this term's evaluation.
-     *
-     * @since [*next-version*]
-     *
-     * @param ValueAwareInterface $ctx [Optional] The context. Default: null
-     *
-     * @return true If the context is valid.
-     *
-     * @throws EvaluationExceptionInterface If the context is invalid.
-     */
-    abstract protected function _assertContextValid(ValueAwareInterface $ctx = null);
+    abstract protected function _evaluate(ValueAwareInterface $ctx = null);
 
     /**
      * Creates an evaluation exception instance.
