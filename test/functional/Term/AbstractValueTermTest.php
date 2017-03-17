@@ -35,6 +35,7 @@ class AbstractValueTermTest extends TestCase
             ->_assertContextValid(function($ctx) {
                 return true;
             })
+            ->_createEvaluationException()
             ->new();
 
         return $mock;

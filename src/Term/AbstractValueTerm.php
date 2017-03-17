@@ -89,4 +89,17 @@ abstract class AbstractValueTerm
      * @throws EvaluationExceptionInterface If the context is invalid.
      */
     abstract protected function _assertContextValid(ValueAwareInterface $ctx = null);
+
+    /**
+     * Creates an evaluation exception instance.
+     *
+     * @see \Exception
+     *
+     * @param string $message The exception message.
+     * @param int $code The exception code. Default: 1
+     * @param \Exception $previous The previous exception.
+     *
+     * @return EvaluationExceptionInterface The created evaluation exception instance.
+     */
+    abstract protected function _createEvaluationException($message, $code = 1, \Exception $previous = null);
 }
