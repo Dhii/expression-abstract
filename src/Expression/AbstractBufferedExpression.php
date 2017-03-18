@@ -4,6 +4,7 @@ namespace Dhii\Expression\Expression;
 
 use Dhii\Data\ValueAwareInterface;
 use Dhii\Evaluable\EvaluableInterface;
+use Dhii\Evaluable\EvaluationExceptionInterface;
 
 /**
  * An abstracted implementation of a buffered expression.
@@ -31,6 +32,8 @@ abstract class AbstractBufferedExpression extends AbstractExpression
      *
      * @param ValueAwareInterface $ctx [optional] The context. Default: null
      *
+     * @throws EvaluationExceptionInterface If an error occurred during evaluation.
+     *
      * @return mixed The result.
      */
     protected function _evaluate(ValueAwareInterface $ctx = null)
@@ -48,6 +51,8 @@ abstract class AbstractBufferedExpression extends AbstractExpression
      * @since 0.1
      *
      * @param ValueAwareInterface $ctx [optional] The context. Default: null
+     *
+     * @throws EvaluationExceptionInterface If an error occurred during evaluation.
      *
      * @return mixed The result.
      */
@@ -79,6 +84,8 @@ abstract class AbstractBufferedExpression extends AbstractExpression
      * @param EvaluableInterface  $term The term instance.
      * @param ValueAwareInterface $ctx  [optional] The context. Default: null
      *
+     * @throws EvaluationExceptionInterface If an error occurred during evaluation.
+     *
      * @return mixed The evaluated term value.
      */
     protected function _evaluateTerm(EvaluableInterface $term, ValueAwareInterface $ctx = null)
@@ -107,6 +114,8 @@ abstract class AbstractBufferedExpression extends AbstractExpression
      *
      * @param ValueAwareInterface $ctx [optional] The context. Default: null
      *
+     * @throws EvaluationExceptionInterface If an error occurred while evaluating the default value.
+     *
      * @return mixed The value.
      */
     abstract protected function _defaultValue(ValueAwareInterface $ctx = null);
@@ -119,6 +128,8 @@ abstract class AbstractBufferedExpression extends AbstractExpression
      * @param mixed               $buffer The current buffer value.
      * @param mixed               $next   The value of the next term.
      * @param ValueAwareInterface $ctx    [optional] The context. Default: null
+     *
+     * @throws EvaluationExceptionInterface If an error occurred while computing the new buffer value.
      *
      * @return mixed The updated buffer.
      */
