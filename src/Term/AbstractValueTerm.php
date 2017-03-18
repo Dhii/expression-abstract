@@ -40,7 +40,7 @@ abstract class AbstractValueTerm
      *
      * @param mixed $value The new term value.
      *
-     * @return $this  This instance.
+     * @return $this This instance.
      */
     protected function _setValue($value)
     {
@@ -56,9 +56,9 @@ abstract class AbstractValueTerm
      *
      * @param ValueAwareInterface $ctx [Optional] The context. Default: null
      *
-     * @return mixed The evaluated result.
-     *
      * @throws EvaluationExceptionInterface If an error occurs during evaluation.
+     *
+     * @return mixed The evaluated result.
      */
     abstract protected function _evaluate(ValueAwareInterface $ctx = null);
 
@@ -67,8 +67,8 @@ abstract class AbstractValueTerm
      *
      * @see \Exception
      *
-     * @param string $message The exception message.
-     * @param int $code The exception code. Default: 1
+     * @param string     $message  The exception message.
+     * @param int        $code     The exception code. Default: 1
      * @param \Exception $previous The previous exception.
      *
      * @return EvaluationExceptionInterface The created evaluation exception instance.
