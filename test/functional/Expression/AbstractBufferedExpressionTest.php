@@ -30,9 +30,6 @@ class AbstractBufferedExpressionTest extends TestCase
     public function createInstance()
     {
         $mock = $this->mock(static::TEST_SUBJECT_CLASSNAME)
-            ->_initBuffer(function () {
-                return 0;
-            })
             ->_defaultValue(function () {
                 return 0;
             })

@@ -30,9 +30,6 @@ class AbstractLeftAssociativeExpressionTest extends TestCase
     public function createInstance()
     {
         $mock = $this->mock(static::TEST_SUBJECT_CLASSNAME)
-            ->_initBuffer(function () {
-                return;
-            })
             ->_defaultValue(function () {
                 return 0;
             })
