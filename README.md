@@ -1,9 +1,9 @@
-# espresso-abstract
+# Dhii - Expression Abstract
 
-[![Build Status](https://travis-ci.org/Dhii/espresso-abstract.svg?branch=master)](https://travis-ci.org/Dhii/espresso-abstract)
-[![Code Climate](https://codeclimate.com/github/Dhii/espresso-abstract/badges/gpa.svg)](https://codeclimate.com/github/Dhii/espresso-abstract)
+[![Build Status](https://travis-ci.org/Dhii/expression-abstract.svg?branch=master)](https://travis-ci.org/Dhii/expression-abstract)
+[![Code Climate](https://codeclimate.com/github/Dhii/expression-abstract/badges/gpa.svg)](https://codeclimate.com/github/Dhii/expression-abstract)
 
-The abstract classes for Espresso: A PHP expression builder and evaluation library.
+Common abstract functionality for expressions.
 
 ## Requirements
 
@@ -14,5 +14,5 @@ The abstract classes for Espresso: A PHP expression builder and evaluation libra
 Install via Composer:
 
 ```
-composer require dhii/espresso-abstract
+composer require dhii/expression-abstract
 ```
