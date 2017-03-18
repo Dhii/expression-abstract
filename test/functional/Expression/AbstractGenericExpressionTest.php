@@ -9,14 +9,14 @@ use Xpmock\TestCase;
 /**
  * Tests {@see \Dhii\Expression\AbstractGenericExpression}.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 class AbstractGenericExpressionTest extends TestCase
 {
     /**
      * Creates a new instance of the test subject for testing.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param array $terms [optional] An array of expression terms. Default: array()
      *
@@ -36,7 +36,7 @@ class AbstractGenericExpressionTest extends TestCase
     /**
      * Creates a mock expression term for testing purposes.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param mixed $return [optional] The value the term evaluates to. Default: null
      *
@@ -52,7 +52,7 @@ class AbstractGenericExpressionTest extends TestCase
     /**
      * Tests whether a valid instance of a the test subject can be created.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testCanBeCreated()
     {
@@ -65,7 +65,7 @@ class AbstractGenericExpressionTest extends TestCase
     /**
      * Tests whether terms are correctly added to the expression.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testAddTerm()
     {
@@ -80,7 +80,7 @@ class AbstractGenericExpressionTest extends TestCase
     /**
      * Tests whether terms are correctly removed from the expression.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testRemoveTerm()
     {
@@ -105,7 +105,7 @@ class AbstractGenericExpressionTest extends TestCase
     /**
      * Tests whether terms are correctly set to the expression.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testSetTerms()
     {
@@ -125,7 +125,7 @@ class AbstractGenericExpressionTest extends TestCase
     /**
      * Tests whether existing terms are correctly overwritten when new terms are set.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testSetTermsWithExistingTerms()
     {

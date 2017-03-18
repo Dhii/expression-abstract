@@ -8,21 +8,21 @@ use Xpmock\TestCase;
 /**
  * Tests {@see Dhii\Expression\Term\AbstractValueTerm}.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 class AbstractValueTermTest extends TestCase
 {
     /**
      * The name of the test subject.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     const TEST_SUBJECT_CLASSNAME = 'Dhii\\Expression\\Term\\AbstractValueTerm';
 
     /**
      * Creates a new instance of the test subject.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return AbstractValueTerm
      */
@@ -39,7 +39,7 @@ class AbstractValueTermTest extends TestCase
     /**
      * Tests whether a valid instance of the test subject can be created.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testCanBeCreated()
     {
@@ -53,7 +53,7 @@ class AbstractValueTermTest extends TestCase
     /**
      * Tests the value getter.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testGetValue()
     {
@@ -67,7 +67,7 @@ class AbstractValueTermTest extends TestCase
     /**
      * Tests the value setter.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testSetValue()
     {

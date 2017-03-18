@@ -8,14 +8,14 @@ use Dhii\Evaluable\EvaluationExceptionInterface;
 /**
  * Basic functionality for a term that has a value configuration.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 abstract class AbstractValueTerm
 {
     /**
      * The literal value.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @var mixed
      */
@@ -24,7 +24,7 @@ abstract class AbstractValueTerm
     /**
      * Gets the term value.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return mixed The term value.
      */
@@ -36,7 +36,7 @@ abstract class AbstractValueTerm
     /**
      * Sets the term  value.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param mixed $value The new term value.
      *
@@ -52,7 +52,7 @@ abstract class AbstractValueTerm
     /**
      * Evaluates the term.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param ValueAwareInterface $ctx [Optional] The context. Default: null
      *
