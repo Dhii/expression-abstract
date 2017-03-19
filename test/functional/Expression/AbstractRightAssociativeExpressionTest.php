@@ -34,9 +34,7 @@ class AbstractRightAssociativeExpressionTest extends TestCase
                 return 0;
             })
             ->_operator(function ($left, $right) {
-                return is_null($left)
-                    ? $right
-                    : $left / $right;
+                return $left / $right;
             })
         ;
 
@@ -96,10 +94,11 @@ class AbstractRightAssociativeExpressionTest extends TestCase
     {
         $subject                = $this->createInstance();
         $subject->this()->terms = array(
-            $this->mockTerm(2),
             $this->mockTerm(10),
+            $this->mockTerm(2),
         );
 
+        // ==> 10 / 2
         $this->assertEquals(5, $subject->this()->_evaluate());
     }
 
@@ -112,11 +111,13 @@ class AbstractRightAssociativeExpressionTest extends TestCase
     {
         $subject                = $this->createInstance();
         $subject->this()->terms = array(
-            $this->mockTerm(2),
+            $this->mockTerm(16),
+            $this->mockTerm(20),
+            $this->mockTerm(50),
             $this->mockTerm(10),
-            $this->mockTerm(4),
         );
 
-        $this->assertEquals(0.2, $subject->this()->_evaluate());
+        // ==> 16 / (20 / (50 / 10))
+        $this->assertEquals(4, $subject->this()->_evaluate());
     }
 }

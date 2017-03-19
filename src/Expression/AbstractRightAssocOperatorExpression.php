@@ -19,6 +19,16 @@ abstract class AbstractRightAssocOperatorExpression extends AbstractOperatorExpr
      *
      * @since 0.1
      */
+    protected function _updateBuffer($buffer, $next, ValueAwareInterface $ctx = null)
+    {
+        return $this->_operator($next, $buffer, $ctx);
+    }
+
+    /**
+     * {@inheritdoc}
+     *
+     * @since 0.1
+     */
     protected function _getOrderedTerms(ValueAwareInterface $ctx = null)
     {
         return array_reverse($this->_getTerms());
