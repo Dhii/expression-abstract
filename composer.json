@@ -1,6 +1,6 @@
 {
     "name": "dhii/expression-abstract",
-    "description": "Abstract base classes for representing expressions.",
+    "description": "Common abstract functionality for representing and evaluating expressions.",
     "type": "library",
     "license": "MIT",
     "authors": [
