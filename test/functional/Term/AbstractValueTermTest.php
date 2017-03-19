@@ -75,7 +75,7 @@ class AbstractValueTermTest extends TestCase
 
         $return = $subject->this()->_setValue('foobar');
 
-        $this->assertEquals('foobar', $subject->this()->value, 'Subject did not set the correct value internally.');
+        $this->assertEquals('foobar', $subject->this()->_getValue(), 'Subject did not set the correct value internally.');
         $this->assertSame($subject, $return, 'Subject did not return a reference of itself');
     }
 }

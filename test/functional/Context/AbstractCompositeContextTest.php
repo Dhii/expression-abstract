@@ -123,7 +123,7 @@ class AbstractCompositeContextTest extends TestCase
             'we'  => null,
         ));
 
-        $this->assertEquals($expected, $subject->this()->value);
+        $this->assertEquals($expected, $subject->this()->_getValue());
     }
 
     /**
@@ -139,17 +139,12 @@ class AbstractCompositeContextTest extends TestCase
             'two' => 2,
         ));
 
-        $subject->this()->_setValues(array(
+        $subject->this()->_setValues($expected = array(
             'three' => 3,
             'four'  => 4,
         ));
 
-        $expected = array(
-            'three' => 3,
-            'four'  => 4,
-        );
-
-        $this->assertEquals($expected, $subject->this()->value);
+        $this->assertEquals($expected, $subject->this()->_getValue());
     }
 
     /**
@@ -188,6 +183,6 @@ class AbstractCompositeContextTest extends TestCase
 
         $subject->this()->_clearValues();
 
-        $this->assertEmpty($subject->this()->value);
+        $this->assertEmpty($subject->this()->_getValue());
     }
 }

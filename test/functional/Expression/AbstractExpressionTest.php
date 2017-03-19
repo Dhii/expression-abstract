@@ -96,7 +96,7 @@ class AbstractExpressionTest extends TestCase
 
         $subject->this()->_setTerms(array($term1, $term2));
 
-        $this->assertEquals(array($term1, $term2), $subject->this()->terms);
+        $this->assertEquals(array($term1, $term2), $subject->this()->_getTerms());
     }
 
     /**
@@ -109,10 +109,16 @@ class AbstractExpressionTest extends TestCase
         $subject = $this->createInstance();
         $term    = $this->mockTerm(10);
 
-        $subject->this()->terms = array(1, 2, 3);
-        $subject->this()->_addTerm($term);
+        $subject->this()->_setTerms($expected = array(
+            $this->mockTerm(1),
+            $this->mockTerm(2),
+            $this->mockTerm(3)
+        ));
 
-        $this->assertEquals(array(1, 2, 3, $term), $subject->this()->terms);
+        $subject->this()->_addTerm($term);
+        $expected[] = $term;
+
+        $this->assertEquals($expected, $subject->this()->_getTerms());
     }
 
     /**
@@ -123,12 +129,18 @@ class AbstractExpressionTest extends TestCase
     public function testRemoveTerm()
     {
         $subject = $this->createInstance();
-        $term    = $this->mockTerm(10);
+        $term1   = $this->mockTerm(2);
+        $term2   = $this->mockTerm(4);
+        $term3   = $this->mockTerm(10);
+        $term4   = $this->mockTerm(12);
 
-        $subject->this()->terms = array(1, 2, 3, $term);
+        $expected = array($term1, $term2, $term3, $term4);
+        $subject->this()->_setTerms($expected);
+
         $subject->this()->_removeTerm(1);
+        array_splice($expected, 1, 1, array());
 
-        $this->assertEquals(array(1, 3, $term), array_values($subject->this()->terms));
+        $this->assertEquals($expected, $subject->this()->_getTerms());
     }
 
     /**
@@ -140,11 +152,11 @@ class AbstractExpressionTest extends TestCase
     {
         $subject = $this->createInstance();
 
-        $subject->this()->terms = array(
+        $subject->this()->_setTerms(array(
             $this->mockTerm(5),
             $this->mockTerm(2),
             $this->mockTerm(9),
-        );
+        ));
 
         $this->assertEquals($this->mockTerm(9), $subject->this()->_getTerm(2));
 
