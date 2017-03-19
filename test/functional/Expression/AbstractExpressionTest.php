@@ -106,7 +106,7 @@ class AbstractExpressionTest extends TestCase
         $term1   = $this->mockTerm(1);
         $term2   = 5.5;
 
-        $this->setExpectedException('PHPUnit_Framework_Error');
+        $this->setExpectedException('\\InvalidArgumentException');
 
         $subject->this()->_setTerms(array($term1, $term2));
 

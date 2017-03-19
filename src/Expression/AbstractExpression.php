@@ -43,11 +43,10 @@ abstract class AbstractExpression
      */
     protected function _setTerms(array $terms)
     {
-        $this->terms = array();
+        $this->_clearTerms();
         foreach ($terms as $term) {
-            if (!($term instanceof EvaluableInterface)) {
-                trigger_error('One of the given terms does not implement EvaluableInterface!', E_USER_NOTICE);
-                continue;
+            if (!$term instanceof EvaluableInterface) {
+                throw new \InvalidArgumentException('One of the given terms does not implement EvaluableInterface!');
             }
             $this->_addTerm($term);
         }
