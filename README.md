@@ -5,6 +5,8 @@
 
 Common abstract functionality for expressions.
 
+This package complies with [Dhii] standards.
+
 ## Requirements
 
 * PHP >= 5.3.9
@@ -22,3 +24,4 @@ composer require dhii/expression-abstract
 Documentation can be found in the [Wiki].
 
 [Wiki]: https://github.com/Dhii/espresso-abstract/wiki
+[Dhii]: https://github.com/Dhii/dhii
