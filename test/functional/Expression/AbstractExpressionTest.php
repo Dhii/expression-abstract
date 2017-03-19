@@ -65,34 +65,20 @@ class AbstractExpressionTest extends TestCase
     }
 
     /**
-     * Tests the protected term getter method.
+     * Tests the protected term getter and setter methods.
      *
      * @since 0.1
      */
-    public function testGetTerms()
-    {
-        $subject = $this->createInstance();
-        $term    = $this->mockTerm(10);
-
-        $subject->this()->terms = array(1, 2, 3, $term);
-
-        $this->assertEquals(array(1, 2, 3, $term), $subject->this()->_getTerms());
-    }
-
-    /**
-     * Tests the protected term setter method.
-     *
-     * @since 0.1
-     */
-    public function testSetTerms()
+    public function testGetSetTerms()
     {
         $subject = $this->createInstance();
         $term1   = $this->mockTerm(1);
         $term2   = $this->mockTerm(2);
 
-        $subject->this()->_setTerms(array($term1, $term2));
+        $expected = array($term1, $term2);
+        $subject->this()->_setTerms($expected);
 
-        $this->assertEquals(array($term1, $term2), $subject->this()->terms);
+        $this->assertEquals($expected, $subject->this()->_getTerms());
     }
 
     /**
