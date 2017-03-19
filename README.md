@@ -16,3 +16,9 @@ Install via Composer:
 ```
 composer require dhii/expression-abstract
 ```
+
+## Documentation
+
+Documentation can be found in the [Wiki].
+
+[Wiki]: https://github.com/Dhii/espresso-abstract/wiki
