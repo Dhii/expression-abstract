@@ -1,6 +1,6 @@
 <?php
 
-namespace Dhii\Expression;
+namespace Dhii\Expression\Expression;
 
 use Dhii\Data\ValueAwareInterface;
 
@@ -10,14 +10,24 @@ use Dhii\Data\ValueAwareInterface;
  * A right associative expression is an expression that evaluates its terms in reverse order.
  * ie. last to first, right to left.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 abstract class AbstractRightAssocOperatorExpression extends AbstractOperatorExpression
 {
     /**
      * {@inheritdoc}
      *
-     * @since [*next-version*]
+     * @since 0.1
+     */
+    protected function _updateBuffer($buffer, $next, ValueAwareInterface $ctx = null)
+    {
+        return $this->_operator($next, $buffer, $ctx);
+    }
+
+    /**
+     * {@inheritdoc}
+     *
+     * @since 0.1
      */
     protected function _getOrderedTerms(ValueAwareInterface $ctx = null)
     {

@@ -1,27 +1,30 @@
 <?php
 
-namespace Dhii\Expression\Test;
+namespace Dhii\Expression\FuncTest\Context;
 
+use Dhii\Expression\Context\AbstractContext;
 use Xpmock\TestCase;
 
 /**
- * Tests {@see Dhii\Expression\AbstractContext}.
+ * Tests {@see Dhii\Expression\Context\AbstractContext}.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 class AbstractContextTest extends TestCase
 {
     /**
      * The name of the test subject.
+     *
+     * @since 0.1
      */
-    const TEST_SUBJECT_CLASSNAME = '\\Dhii\\Expression\\AbstractContext';
+    const TEST_SUBJECT_CLASSNAME = '\\Dhii\\Expression\\Context\\AbstractContext';
 
     /**
      * Creates a new instance of the test subject.
      *
      * @since [*next=version*]
      *
-     * @return Dhii\Expression\AbstractContext
+     * @return AbstractContext
      */
     public function createInstance()
     {
@@ -36,7 +39,7 @@ class AbstractContextTest extends TestCase
     /**
      * Tests whether a valid instance of the test subject can be created.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testCanBeCreated()
     {

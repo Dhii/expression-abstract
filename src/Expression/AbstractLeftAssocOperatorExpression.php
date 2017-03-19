@@ -1,6 +1,6 @@
 <?php
 
-namespace Dhii\Expression;
+namespace Dhii\Expression\Expression;
 
 /**
  * Abstract implementation of a left associative expression.
@@ -8,7 +8,7 @@ namespace Dhii\Expression;
  * A left associative expression is an expression that evaluates its terms in the order they are given.
  * ie. first to last, left to right.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 abstract class AbstractLeftAssocOperatorExpression extends AbstractOperatorExpression
 {

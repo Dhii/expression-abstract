@@ -1,44 +1,40 @@
 <?php
 
-namespace Dhii\Expression\Test;
+namespace Dhii\Expression\FuncTest\Expression;
 
-use \Dhii\Expression\AbstractLeftAssocOperatorExpression;
-use \Dhii\Evaluable\EvaluableInterface;
-use \Xpmock\TestCase;
+use Dhii\Expression\Expression\AbstractLeftAssocOperatorExpression;
+use Dhii\Evaluable\EvaluableInterface;
+use Xpmock\TestCase;
 
 /**
- * Tests {@see \Dhii\Expression\AbstractLeftAssocOperatorExpression}.
+ * Tests {@see Dhii\Expression\AbstractLeftAssocOperatorExpression}.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
-class AbstractLeftAssocOperatorExpressionTest extends TestCase
+class AbstractLeftAssociativeExpressionTest extends TestCase
 {
-
     /**
      * The name of the test subject.
+     *
+     * @since 0.1
      */
-    const TEST_SUBJECT_CLASSNAME = 'Dhii\\Expression\\AbstractLeftAssocOperatorExpression';
+    const TEST_SUBJECT_CLASSNAME = 'Dhii\\Expression\\Expression\\AbstractLeftAssocOperatorExpression';
 
     /**
      * Creates an instance of the test subject.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return AbstractLeftAssocOperatorExpression
      */
     public function createInstance()
     {
         $mock = $this->mock(static::TEST_SUBJECT_CLASSNAME)
-            ->_initBuffer(function() {
-                return null;
-            })
-            ->_defaultValue(function() {
+            ->_defaultValue(function () {
                 return 0;
             })
-            ->_operator(function($left, $right) {
-                return is_null($left)
-                    ? $right
-                    : $left / $right;
+            ->_operator(function ($left, $right) {
+                return $left / $right;
             })
         ;
 
@@ -48,7 +44,7 @@ class AbstractLeftAssocOperatorExpressionTest extends TestCase
     /**
      * Creates a mock term instance that simply returns a specific value.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param mixed $value The value to return.
      *
@@ -65,7 +61,7 @@ class AbstractLeftAssocOperatorExpressionTest extends TestCase
     /**
      * Tests the evaluation without any terms.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testNoTerms()
     {
@@ -77,13 +73,13 @@ class AbstractLeftAssocOperatorExpressionTest extends TestCase
     /**
      * Tests the evaluation with just 1 term.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testSingleTerm()
     {
-        $subject = $this->createInstance();
+        $subject                = $this->createInstance();
         $subject->this()->terms = array(
-            $this->mockTerm(2)
+            $this->mockTerm(2),
         );
 
         $this->assertEquals(2, $subject->this()->_evaluate());
@@ -92,34 +88,36 @@ class AbstractLeftAssocOperatorExpressionTest extends TestCase
     /**
      * Tests the evaluation with 2 terms.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testTwoTerms()
     {
-        $subject = $this->createInstance();
+        $subject                = $this->createInstance();
         $subject->this()->terms = array(
+            $this->mockTerm(10),
             $this->mockTerm(2),
-            $this->mockTerm(10)
         );
 
-        $this->assertEquals(0.2, $subject->this()->_evaluate());
+        // ==> 10 / 2
+        $this->assertEquals(5, $subject->this()->_evaluate());
     }
 
     /**
      * Tests the evaluation with multiple terms.
      *
-     * @since [*next-version*]
+     * @since 0.1
      */
     public function testMultipleTerms()
     {
-        $subject = $this->createInstance();
+        $subject                = $this->createInstance();
         $subject->this()->terms = array(
+            $this->mockTerm(40),
+            $this->mockTerm(4),
             $this->mockTerm(2),
-            $this->mockTerm(10),
-            $this->mockTerm(4)
+            $this->mockTerm(5),
         );
 
-        $this->assertEquals(0.05, $subject->this()->_evaluate());
+        // ==> ((40 / 4) / 2) / 5
+        $this->assertEquals(1, $subject->this()->_evaluate());
     }
-
 }

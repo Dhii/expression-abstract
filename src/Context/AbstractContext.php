@@ -1,18 +1,18 @@
 <?php
 
-namespace Dhii\Expression;
+namespace Dhii\Expression\Context;
 
 /**
  * Abstract implementation of a context.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 abstract class AbstractContext
 {
     /**
      * The contextual value.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @var mixed
      */
@@ -21,7 +21,7 @@ abstract class AbstractContext
     /**
      * Retrieves the contextual value.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return mixed The contextual value.
      */
@@ -33,7 +33,7 @@ abstract class AbstractContext
     /**
      * Sets the contextual value.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param mixed $value The contextual value.
      *

@@ -1,9 +1,10 @@
 <?php
 
-namespace Dhii\Expression;
+namespace Dhii\Expression\Expression;
 
 use Dhii\Data\ValueAwareInterface;
 use Dhii\Evaluable\EvaluableInterface;
+use Dhii\Evaluable\EvaluationExceptionInterface;
 
 /**
  * An abstracted implementation of a buffered expression.
@@ -13,25 +14,49 @@ use Dhii\Evaluable\EvaluableInterface;
  *
  * After going through all the terms in the expression, the buffer will yield the result.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 abstract class AbstractBufferedExpression extends AbstractExpression
 {
     /**
      * The minimum number of terms.
+     *
+     * @since 0.1
      */
     const MIN_TERMS = 1;
 
     /**
      * Evaluates the expression.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param ValueAwareInterface $ctx [optional] The context. Default: null
+     *
+     * @throws EvaluationExceptionInterface If an error occurred during evaluation.
      *
      * @return mixed The result.
      */
     protected function _evaluate(ValueAwareInterface $ctx = null)
+    {
+        return $this->_eval($ctx);
+    }
+
+    /**
+     * Does the actual evaluation of the expression.
+     *
+     * This method is used to separate the actual basic evaluation logic for buffered expressions
+     * from the _evaluate method. This allows extending classes to override that method without
+     * losing functionality; especially useful while creating mocks for testing.
+     *
+     * @since 0.1
+     *
+     * @param ValueAwareInterface $ctx [optional] The context. Default: null
+     *
+     * @throws EvaluationExceptionInterface If an error occurred during evaluation.
+     *
+     * @return mixed The result.
+     */
+    protected function _eval(ValueAwareInterface $ctx = null)
     {
         $terms    = $this->_getOrderedTerms($ctx);
         $numTerms = count($terms);
@@ -54,10 +79,12 @@ abstract class AbstractBufferedExpression extends AbstractExpression
     /**
      * Evaluates the given term.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param EvaluableInterface  $term The term instance.
      * @param ValueAwareInterface $ctx  [optional] The context. Default: null
+     *
+     * @throws EvaluationExceptionInterface If an error occurred during evaluation.
      *
      * @return mixed The evaluated term value.
      */
@@ -69,7 +96,7 @@ abstract class AbstractBufferedExpression extends AbstractExpression
     /**
      * Gets the terms in the order they are meant to be evaluated.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param ValueAwareInterface $ctx [optional] The context. Default: null
      *
@@ -83,9 +110,11 @@ abstract class AbstractBufferedExpression extends AbstractExpression
     /**
      * Gets the expression value when it doesn't have a sufficient number of terms.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param ValueAwareInterface $ctx [optional] The context. Default: null
+     *
+     * @throws EvaluationExceptionInterface If an error occurred while evaluating the default value.
      *
      * @return mixed The value.
      */
@@ -94,11 +123,13 @@ abstract class AbstractBufferedExpression extends AbstractExpression
     /**
      * Updates the buffer with the next term value.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param mixed               $buffer The current buffer value.
      * @param mixed               $next   The value of the next term.
      * @param ValueAwareInterface $ctx    [optional] The context. Default: null
+     *
+     * @throws EvaluationExceptionInterface If an error occurred while computing the new buffer value.
      *
      * @return mixed The updated buffer.
      */

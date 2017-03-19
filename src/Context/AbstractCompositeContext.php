@@ -1,22 +1,22 @@
 <?php
 
-namespace Dhii\Expression;
+namespace Dhii\Expression\Context;
 
 /**
  * Abstract implementation of a composite context.
  *
- * @since [*next-version*]
+ * @since 0.1
  */
 abstract class AbstractCompositeContext extends AbstractContext
 {
     /**
      * Gets the contextual value associated with the given key.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param string $key The key.
      *
-     * @return mixed The value associated with the given key.
+     * @return mixed The value associated with the given key, or null if the key was not found.
      */
     protected function _getValueOf($key)
     {
@@ -28,7 +28,7 @@ abstract class AbstractCompositeContext extends AbstractContext
     /**
      * Checks if the context has a value associated with a specific key.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param string $key The key.
      *
@@ -42,7 +42,7 @@ abstract class AbstractCompositeContext extends AbstractContext
     /**
      * Registers a value to the context.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @param string|array $key   The key of the value or an associative array of values.
      * @param mixed        $value The value.
@@ -51,19 +51,31 @@ abstract class AbstractCompositeContext extends AbstractContext
      */
     protected function _setValue($key, $value = null)
     {
-        if (is_array($key)) {
-            $this->value = $key;
-
-            return $this;
-        }
-
         $this->value[$key] = $value;
 
         return $this;
     }
 
     /**
+     * Sets the entire value set.
+     *
+     * @since 0.1
+     *
+     * @param array $values An associative array of key-value pairs.
+     *
+     * @return $this This instance.
+     */
+    protected function _setValues(array $values)
+    {
+        $this->value = $values;
+
+        return $this;
+    }
+
+    /**
      * Removes a value from the context.
+     *
+     * @since 0.1
      *
      * @param string $key The key.
      *
@@ -79,7 +91,7 @@ abstract class AbstractCompositeContext extends AbstractContext
     /**
      * Clears the context by removing all values.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return $this
      */
@@ -93,7 +105,7 @@ abstract class AbstractCompositeContext extends AbstractContext
     /**
      * Gets all of the values in this context.
      *
-     * @since [*next-version*]
+     * @since 0.1
      *
      * @return array An associative array containing all the values mapped by their keys.
      */
